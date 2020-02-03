@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Login from "./Components/Login.js";
+import { Route } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +11,15 @@ class App extends React.Component {
 
   render(){
     return(
-      <h1>This is the first trial of the Minor Project!!</h1>
+      // <h1>This is the first trial of the Minor Project!!</h1>
+      <Router>
+        <Route
+          path="/login"
+          exact
+          render = {
+            <Login></Login>
+          } />
+      </Router>
     )
   }
   
