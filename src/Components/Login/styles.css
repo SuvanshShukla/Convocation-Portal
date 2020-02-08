@@ -1,3 +1,7 @@
+/* .bkgImg {
+  background-image: url(./login-page-img.jpg);
+} */
+
 /* Position and sizing of burger button */
 .bm-burger-button {
     position: fixed;
@@ -64,3 +68,5 @@
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
   }
+
+  

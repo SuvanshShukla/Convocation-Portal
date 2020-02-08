@@ -6,7 +6,16 @@ import "./styles.css";
 
 function Login() {
   return (
-    <div>
+    <div
+      style={{
+        height: 700,
+        backgroundImage:
+          "url(" + "https://i.ytimg.com/vi/F3BrKOi18lE/maxresdefault.jpg" + ")",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
       <Menu>
         <a id="home" className="menu-item" href="/">
           Home
@@ -28,13 +37,16 @@ function Login() {
           </Col>
         </Row>
         <Row className="mt-5">
-          <Col className="mt-5" md={{ span: 5, offset: 3 }}>
-            <div className="mt-5 p-3 border text-center">
+          <Col className="mt-5" md={{ span: 4, offset: 4 }}>
+            <div
+              className="mt-5 p-3 border text-center"
+              style={{ backgroundColor: "white", borderRadius: 20 }}
+            >
               Please Enter Details to Login
               <Form>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email"/>
+                  <Form.Control type="email" placeholder="Enter email" />
                   <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
                   </Form.Text>
