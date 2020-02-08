@@ -1,3 +1,4 @@
+//this is the UserHome page 
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Button, Carousel, Container, Row, Col } from "react-bootstrap";
@@ -23,15 +24,10 @@ function UserHome() {
         <Row>
           <Col>
             <div className="border text-center">
-              <h1>Manipal University Jaipur</h1>
+              <h1>User Home Page!!</h1>
             </div>
           </Col>
-        </Row>
-        <Row className="mt-5">
-          <Col className="mt-5" md={{span: 5, offset: 3}}>
-            <div className="mt-5 border text-center">Please Enter Details to Login</div>
-          </Col>
-        </Row>
+        </Row>        
       </Container>
     </div>
   );
@@ -39,44 +35,4 @@ function UserHome() {
 
 export default UserHome;
 
-{
-  /* <Carousel>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://picsum.photos/50/25"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://picsum.photos/50/25"
-            alt="Third slide"
-          />
 
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://picsum.photos/50/25"
-            alt="Third slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel> */
-}
