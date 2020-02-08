@@ -1,11 +1,34 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Button, Carousel, Container, Row, Col } from "react-bootstrap";
+import { slide as Menu } from 'react-burger-menu';
+import "./styles.css";
+
+
 
 function UserHome() {
   return (
-    <div>
-      {/* <Carousel>
+    <div>    
+        <Menu>
+        <a id="home" className="menu-item" href="/">Home</a>
+        <a id="about" className="menu-item" href="/about">About</a>
+        <a id="contact" className="menu-item" href="/contact">Contact</a>
+        {/* <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a> */}
+      </Menu>
+      <Container>
+          <Row>
+              <Col>
+                  <div className="border text-center"><h1>Manipal University Jaipur</h1></div>
+              </Col>
+          </Row>
+      </Container>
+    </div>
+  );
+}
+
+export default UserHome;
+
+{/* <Carousel>
         <Carousel.Item>
           <img
             className="d-block w-100"
@@ -44,15 +67,3 @@ function UserHome() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel> */}
-      <Container>
-          <Row>
-              <Col md={{offset: 20}}>
-                  <div className="border">Hello</div>
-              </Col>
-          </Row>
-      </Container>
-    </div>
-  );
-}
-
-export default UserHome;
