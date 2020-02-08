@@ -1,47 +1,68 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Button, Carousel, Container, Row, Col } from "react-bootstrap";
+import { Button, Carousel, Container, Row, Col, Form } from "react-bootstrap";
 import { slide as Menu } from "react-burger-menu";
 import "./styles.css";
 
+function Login() {
+  return (
+    <div>
+      <Menu>
+        <a id="home" className="menu-item" href="/">
+          Home
+        </a>
+        <a id="about" className="menu-item" href="/about">
+          About
+        </a>
+        <a id="contact" className="menu-item" href="/contact">
+          Contact
+        </a>
+        {/* <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a> */}
+      </Menu>
+      <Container>
+        <Row>
+          <Col>
+            <div className="border text-center">
+              <h1>Manipal University Jaipur</h1>
+            </div>
+          </Col>
+        </Row>
+        <Row className="mt-5">
+          <Col className="mt-5" md={{ span: 5, offset: 3 }}>
+            <div className="mt-5 p-3 border text-center">
+              Please Enter Details to Login
+              <Form>
+                <Form.Group controlId="formBasicEmail">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email"/>
+                  <Form.Text className="text-muted">
+                    We'll never share your email with anyone else.
+                  </Form.Text>
+                </Form.Group>
 
-function Login(){
-    return(
-        <div>
-        <Menu>
-          <a id="home" className="menu-item" href="/">
-            Home
-          </a>
-          <a id="about" className="menu-item" href="/about">
-            About
-          </a>
-          <a id="contact" className="menu-item" href="/contact">
-            Contact
-          </a>
-          {/* <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a> */}
-        </Menu>
-        <Container>
-          <Row>
-            <Col>
-              <div className="border text-center">
-                <h1>Manipal University Jaipur</h1>
-              </div>
-            </Col>
-          </Row>
-          <Row className="mt-5">
-            <Col className="mt-5" md={{span: 5, offset: 3}}>
-              <div className="mt-5 border text-center">Please Enter Details to Login</div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    );
+                <Form.Group controlId="formBasicPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="password" placeholder="Password" />
+                </Form.Group>
+                <Form.Group controlId="formBasicCheckbox">
+                  <Form.Check type="checkbox" label="Check me out" />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </Form>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
 }
 
 export default Login;
 
 {
-    /* <Carousel>
+  /* <Carousel>
           <Carousel.Item>
             <img
               className="d-block w-100"
@@ -80,4 +101,4 @@ export default Login;
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel> */
-  }
+}
