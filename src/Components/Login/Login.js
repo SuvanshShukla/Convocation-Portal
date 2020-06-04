@@ -4,13 +4,15 @@ import { Button, Carousel, Container, Row, Col, Form } from "react-bootstrap";
 import { slide as Menu } from "react-burger-menu";
 import "./styles.css";
 
+
+
 function Login() {
   return (
     <div
       style={{
         height: 700,
         backgroundImage:
-          "url(" + "https://i.ytimg.com/vi/F3BrKOi18lE/maxresdefault.jpg" + ")",
+          "url(" + "https://magarticles.magzter.com/articles/410/236636/59a598a8e876f/Manipal-University-Jaipur-Fostering-Academic-Excellence.jpg" + ")",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat"
@@ -42,7 +44,7 @@ function Login() {
               className="mt-5 p-3 border text-center"
               style={{ backgroundColor: "white", borderRadius: 20 }}
             >
-              Please Enter Details to Login
+              Please Enter Details to Register
               <Form>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>
@@ -53,14 +55,14 @@ function Login() {
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" placeholder="Password" />
+                  <Form.Label>Registration Number</Form.Label>
+                  <Form.Control type="text" placeholder="reg. no." />
                 </Form.Group>
                 <Form.Group controlId="formBasicCheckbox">
-                  <Form.Check type="checkbox" label="Check me out" />
+                  <Form.Check type="checkbox" label="Send OTP" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                  Submit
+                  Register
                 </Button>
               </Form>
             </div>
