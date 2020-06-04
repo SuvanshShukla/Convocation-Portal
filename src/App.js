@@ -9,9 +9,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    /* this.state ={
-      
-    } */
+    this.state ={
+      name: "",
+    } ;
   }
 
   render(){
@@ -20,7 +20,7 @@ class App extends React.Component {
       <Router>
         <Route path="/login" exact render={props => (<Login></Login>)} />
         <Route path="/UserHome" exact render={props => (<UserHome></UserHome>)} />
-        <Route path="/StudentInfo" exact render={props => (<StudentInfo></StudentInfo>)} />
+        <Route path="/StudentInfo" exact render={props => (<StudentInfo {...props} name={this.state.name}></StudentInfo>)} />
       </Router>
     );
   }
