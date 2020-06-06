@@ -19,6 +19,22 @@ var firstName,
   state, 
   zip = "";
 
+  function radio(){
+    var noRadio = document.getElementById("formHorizontalRadios2");
+    var decision = noRadio.value;
+    var yesRadio = document.getElementById("formHorizontalRadios1");
+    var decision1 = yesRadio.value;
+
+    if(decision || decision1 == "1"){
+      console.log(decision);
+    }
+    else {
+      console.log("not selected!!");
+      
+    }
+    
+  }
+
 function submitAll() {
   console.log(firstName);
   console.log(lastName);
@@ -26,6 +42,7 @@ function submitAll() {
   console.log(email);
   console.log(studentNo);
   console.log(parentNo);
+  console.log(bloodgrp);
   console.log(program);
   console.log(dept);
   console.log(gradyear);
@@ -249,18 +266,20 @@ function StudentInfo() {
                         label="Yes"
                         name="formHorizontalRadios"
                         id="formHorizontalRadios1"
+                        value = "1"
                       />
                       <Form.Check
                         type="radio"
                         label="No"
                         name="formHorizontalRadios"
                         id="formHorizontalRadios2"
+                        value = "0"
                       />
                     </Col>
                   </Form.Group>
                 </fieldset>
               </Form.Row>
-              <Button variant="primary" type="button">
+              <Button variant="primary" type="button" onClick={() => {radio()}}>
                 Submit
               </Button>
             </Container>
