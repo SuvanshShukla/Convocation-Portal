@@ -1,27 +1,26 @@
 import React from "react";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import {
-  Container,
-  Button,
-  Form,
-  Row,
-  Col,
-  Tab,
-  Tabs,
-} from "react-bootstrap";
+import { Container, Button, Form, Row, Col, Tab, Tabs } from "react-bootstrap";
 // import { slide as Menu } from "react-burger-menu";
 
 /* function onSubmit({name}) {
   console.log("this is doing something");
+} */
+var firstName = "";
+var lastName = "";
+var regno, email, phone, guardph, bloodgrp, program, dept, gradyear, gradmonth, address ="";
+
+function setDetails(expression) {
+  /* firstName = e.target.value;
+  lastName = f.target.value; */
+  if(expression == e.target.value)
+
 }
 
-function setName(e, {name}) {
-    this.setState({
-        name: e.target.value
-    });
-    console.log(name);
-    
-} */
+function submitName() {
+  console.log(firstName);
+  console.log(lastName);
+}
 
 function StudentInfo() {
   return (
@@ -39,27 +38,46 @@ function StudentInfo() {
                       <Form.Control
                         type="text"
                         placeholder="Enter First Name"
-                        // onChange= {e => {setName(e)}}
+                        onChange={(e) => {
+                          setDetails(e);
+                        }}
                       />
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridLastName">
                       <Form.Label>last Name</Form.Label>
-                      <Form.Control type="text" placeholder="Enter last Name" />
+                      <Form.Control
+                        type="text"
+                        placeholder="Enter last Name"
+                        onChange={(f) => {
+                          setDetails(f);
+                        }}
+                      />
                     </Form.Group>
                   </Form.Row>
 
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridRegNo">
                       <Form.Label>Registration Number</Form.Label>
-                      <Form.Control placeholder="e.g. 1790000..." />
+                      <Form.Control
+                        placeholder="e.g. 1790000..."
+                        onChange={(e) => {
+                          setDetails(e);
+                        }}
+                      />
                     </Form.Group>
                   </Form.Row>
 
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Form.Label>Email</Form.Label>
-                      <Form.Control type="email" placeholder="Enter email" />
+                      <Form.Control
+                        type="email"
+                        placeholder="Enter email"
+                        onChange={(e) => {
+                          setDetails(e);
+                        }}
+                      />
                     </Form.Group>
                   </Form.Row>
 
@@ -69,6 +87,9 @@ function StudentInfo() {
                       <Form.Control
                         type="text"
                         placeholder="Enter Student Phone Number"
+                        onChange={(e) => {
+                          setDetails(e);
+                        }}
                       />
                     </Form.Group>
                   </Form.Row>
@@ -79,6 +100,9 @@ function StudentInfo() {
                       <Form.Control
                         type="text"
                         placeholder="Enter Parent Phone Number"
+                        onChange={(e) => {
+                          setDetails(e);
+                        }}
                       />
                     </Form.Group>
                   </Form.Row>
@@ -105,6 +129,9 @@ function StudentInfo() {
                       <Form.Control
                         type="text"
                         placeholder="btech, ba, llb all small"
+                        onChange={(e) => {
+                          setDetails(e);
+                        }}
                       />
                     </Form.Group>
                   </Form.Row>
@@ -112,7 +139,13 @@ function StudentInfo() {
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridDept">
                       <Form.Label>Department</Form.Label>
-                      <Form.Control type="text" placeholder="CS, IT, etc..." />
+                      <Form.Control
+                        type="text"
+                        placeholder="CS, IT, etc..."
+                        onChange={(e) => {
+                          setDetails(e);
+                        }}
+                      />
                     </Form.Group>
                   </Form.Row>
 
@@ -122,11 +155,14 @@ function StudentInfo() {
                       <Form.Control
                         type="text"
                         placeholder="Please enter your year of graduation"
+                        onChange={(e) => {
+                          setDetails(e);
+                        }}
                       />
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridGradMonth">
-                      <Form.Label>Graduation Monthp</Form.Label>
+                      <Form.Label>Graduation Month</Form.Label>
                       <Form.Control as="select" defaultValue="Choose...">
                         <option>January</option>
                         <option>February</option>
@@ -147,7 +183,12 @@ function StudentInfo() {
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridAddress">
                       <Form.Label>Address</Form.Label>
-                      <Form.Control placeholder="House number, street, etc." />
+                      <Form.Control
+                        placeholder="Please enter full address e.g. House number, street, etc."
+                        onChange={(e) => {
+                          setDetails(e);
+                        }}
+                      />
                     </Form.Group>
                   </Form.Row>
 
@@ -170,7 +211,10 @@ function StudentInfo() {
 
                   <Button
                     variant="primary"
-                    type="submit" /* onClick={() => {onSubmit()}} */
+                    type="button"
+                    onClick={() => {
+                      submitName();
+                    }}
                   >
                     Submit
                   </Button>
@@ -181,14 +225,29 @@ function StudentInfo() {
           <Tab eventKey="payment" title="payment">
             <Container>
               <Form.Row>
-                <Form.Group controlId="formCheckbox">
-                  <Form.Label>Will You Attend the Convocation</Form.Label>
-                  <Form.Check type="checkbox" label="Yes" />
-                  <Form.Check type="checkbox" label="No" />
-                </Form.Group>
+                <fieldset>
+                  <Form.Group as={Row}>
+                    <Form.Label as="legend">
+                      Will you be attending the Convocation?
+                    </Form.Label>
+                    <Col sm={10}>
+                      <Form.Check
+                        type="radio"
+                        label="Yes"
+                        name="formHorizontalRadios"
+                        id="formHorizontalRadios1"
+                      />
+                      <Form.Check
+                        type="radio"
+                        label="No"
+                        name="formHorizontalRadios"
+                        id="formHorizontalRadios2"
+                      />
+                    </Col>
+                  </Form.Group>
+                </fieldset>
               </Form.Row>
-
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="button">
                 Submit
               </Button>
             </Container>
