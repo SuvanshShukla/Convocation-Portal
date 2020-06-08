@@ -41,13 +41,17 @@ var curtain = "";
   console.log(curtain);
 } */
 
-function myFunction(input) {
-  var x = document.getElementById("hidden");
+function hideAndSeek(input) {
+  var x = document.getElementById("attending");
+  var y = document.getElementById("notAttending");
+  y.style.display = "none";
   if(input == true){
     x.style.display = "block";
+    y.style.display = "none";
   }
   else {
     x.style.display = "none";
+    y.style.display = "block";
   }
 }
 
@@ -288,7 +292,7 @@ function StudentInfo() {
                         id="formHorizontalRadios1"
                         
                         onClick={() => {
-                          myFunction(true);
+                          hideAndSeek(true);
                         }}
                       />
 
@@ -299,7 +303,7 @@ function StudentInfo() {
                         id="formHorizontalRadios2"
                         value="0"
                         onClick={() => {
-                          myFunction(false);
+                          hideAndSeek(false);
                         }}
                       />
                     </Col>
@@ -307,12 +311,13 @@ function StudentInfo() {
                 </fieldset>
               </Form.Row>
               <Form.Row>
-                <div id="hidden">This is my DIV element.</div>
+                <div id="attending">This is my DIV element.</div>
+                <div id="notAttending">This shows if the person is not attending</div>
               </Form.Row>
 
               <Button
                 variant="primary"
-                type="button" /* onClick={() => {radio()}} */
+                type="button"
               >
                 Submit
               </Button>
