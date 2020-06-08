@@ -2,6 +2,7 @@ import React from "react";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Container, Button, Form, Row, Col, Tab, Tabs } from "react-bootstrap";
 // import { slide as Menu } from "react-burger-menu";
+import "./studentInfo.css";
 
 var firstName,
   lastName,
@@ -75,11 +76,11 @@ function submitAll() {
 
 function StudentInfo() {
   return (
-    <div>
+    <div className="I">
       <div>
         <h5>Tabs go here</h5>
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
-          <Tab eventKey="home" title="Home">
+          <Tab eventKey="home" title="Home" className="one">
             <Container>
               <Row>
                 <Form>
@@ -275,7 +276,7 @@ function StudentInfo() {
               </Row>
             </Container>
           </Tab>
-          <Tab eventKey="payment" title="payment">
+          <Tab eventKey="payment" title="payment" className="two">
             <Container>
               <Form.Row>
                 <fieldset>
