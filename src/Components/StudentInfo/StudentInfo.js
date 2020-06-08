@@ -16,10 +16,11 @@ var firstName,
   gradmonth,
   address,
   city,
-  state, 
+  state,
   zip = "";
+var curtain = "";
 
-  function radio(){
+/* function radio(){
     var noRadio = document.getElementById("formHorizontalRadios2");
     var decision = noRadio.value;
     var yesRadio = document.getElementById("formHorizontalRadios1");
@@ -33,7 +34,22 @@ var firstName,
       
     }
     
+  } */
+
+/* function show(x) {
+  curtain = x;
+  console.log(curtain);
+} */
+
+function myFunction(input) {
+  var x = document.getElementById("hidden");
+  if(input == true){
+    x.style.display = "block";
   }
+  else {
+    x.style.display = "none";
+  }
+}
 
 function submitAll() {
   console.log(firstName);
@@ -50,7 +66,7 @@ function submitAll() {
   console.log(address);
   console.log(city);
   console.log(state);
-  console.log(zip);  
+  console.log(zip);
 }
 
 function StudentInfo() {
@@ -215,27 +231,30 @@ function StudentInfo() {
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridCity">
                       <Form.Label>City</Form.Label>
-                      <Form.Control onChange={(e) => {
-                        city = e.target.value;
-                      }}/>
+                      <Form.Control
+                        onChange={(e) => {
+                          city = e.target.value;
+                        }}
+                      />
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridState">
                       <Form.Label>State</Form.Label>
-                      <Form.Control 
-                      placeholder="e.g. rajasthan"
-                      onChange = {(e) => {
-                        state = e.target.value;
-                      }}
+                      <Form.Control
+                        placeholder="e.g. rajasthan"
+                        onChange={(e) => {
+                          state = e.target.value;
+                        }}
                       />
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridZip">
                       <Form.Label>Zip</Form.Label>
-                      <Form.Control 
-                      onChange = {(e) => {
-                        zip = e.target.value;
-                      }} />
+                      <Form.Control
+                        onChange={(e) => {
+                          zip = e.target.value;
+                        }}
+                      />
                     </Form.Group>
                   </Form.Row>
 
@@ -258,28 +277,43 @@ function StudentInfo() {
                 <fieldset>
                   <Form.Group as={Row}>
                     <Form.Label as="legend">
-                      Will you be attending the Convocation?
+                      Will you be attending the Convocation? (Yes by default)
                     </Form.Label>
                     <Col sm={10}>
                       <Form.Check
                         type="radio"
+                        defaultChecked
                         label="Yes"
                         name="formHorizontalRadios"
                         id="formHorizontalRadios1"
-                        value = "1"
+                        
+                        onClick={() => {
+                          myFunction(true);
+                        }}
                       />
+
                       <Form.Check
                         type="radio"
                         label="No"
                         name="formHorizontalRadios"
                         id="formHorizontalRadios2"
-                        value = "0"
+                        value="0"
+                        onClick={() => {
+                          myFunction(false);
+                        }}
                       />
                     </Col>
                   </Form.Group>
                 </fieldset>
               </Form.Row>
-              <Button variant="primary" type="button" onClick={() => {radio()}}>
+              <Form.Row>
+                <div id="hidden">This is my DIV element.</div>
+              </Form.Row>
+
+              <Button
+                variant="primary"
+                type="button" /* onClick={() => {radio()}} */
+              >
                 Submit
               </Button>
             </Container>
