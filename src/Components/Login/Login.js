@@ -40,6 +40,7 @@ function Login() {
         </Row>
         <Row className="mt-5">
           <Col className="mt-5" md={{ span: 4, offset: 4 }}>
+            <div className="opacity">
             <div
               className="mt-5 p-3 border text-center"
               style={{ backgroundColor: "white", borderRadius: 20 }}
@@ -66,10 +67,12 @@ function Login() {
                 </Button>
               </Form>
             </div>
+           </div>
           </Col>
         </Row>
       </Container>
     </div>
+ 
   );
 }
 
