@@ -312,7 +312,17 @@ function StudentInfo() {
               </Form.Row>
               <Form.Row>
                 <div id="attending">This is my DIV element.</div>
-                <div id="notAttending">This shows if the person is not attending</div>
+                <div id="notAttending"></div>
+                {/* <Form.Group as={Col} controlId="formGridLastName">
+                      <Form.Label>last Name</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Enter last Name"
+                        />
+                    </Form.Group>
+                
+                        {document.getElementById("notAttending").setAttribute("display", "none")} */}
+                
               </Form.Row>
 
               <Button
