@@ -76,9 +76,9 @@ function submitAll() {
 function StudentInfo() {
   return (
     <div className="I">
+     
       <Navbar bg="dark" variant="dark">
-        <div>
-        <Menu>
+      <Menu menuClassName={"burger"} crossClassName={"crossButton"}>
           <a id="home" className="menu-item" href="/">
             Home
           </a>
@@ -90,7 +90,6 @@ function StudentInfo() {
           </a>
           {/* <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a> */}
         </Menu>
-        </div>
         <Navbar.Brand href="#home">Manipal University Jaipur</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#home"><Link to="/studentInfo">Dashboard</Link></Nav.Link>
