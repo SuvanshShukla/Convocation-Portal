@@ -1,8 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router,Route,Link } from "react-router-dom";
 import { Button, Carousel, Container, Row, Col, Form } from "react-bootstrap";
 import { slide as Menu } from "react-burger-menu";
+
 import "./styles.css";
+import Signup from "../Signup";
 
 
 
@@ -47,7 +49,7 @@ function Login() {
               className="mt-5 p-3 border text-center"
               style={{ backgroundColor: "white", borderRadius: 20 }}
             >
-              <p className="highlight">Please Enter Details to Register</p>
+              <p className="highlight">Please Enter Details to Sign in</p>
               <Form>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>
@@ -58,14 +60,24 @@ function Login() {
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
-                  <Form.Label>Registration Number</Form.Label>
-                  <Form.Control type="text" placeholder="reg. no." />
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="password" placeholder="" />
                 </Form.Group>
-                <Form.Group controlId="formBasicCheckbox">
-                  <Form.Check type="checkbox" label="Send OTP" />
-                </Form.Group>
+                {/*
+                */}
+                <Route  path='/Signup' exact strict component={<Signup/>} 
+                                       
+                />
+                 <ul className="t">
+              Don't have an Account <Link to="/Signup" exact strict>Sign up</Link>                        
+                 </ul>
+                   {/*<Form.Group controlId="formBasicCheckbox">
+                  <Form.Check type="checkbox" label="Send OTP" /> 
+                  </Form.Group>
+                  */} 
+                
                 <Button variant="primary" type="submit">
-                  Register
+                  Sign in
                 </Button>
               </Form>
             </div>
@@ -77,6 +89,7 @@ function Login() {
  
   );
 }
+
 
 export default Login;
 
