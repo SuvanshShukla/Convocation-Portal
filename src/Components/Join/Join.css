@@ -21,7 +21,7 @@
      background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
-    
+    color:red;
 }
 .label,.form{
     font-size: 1.0em;
@@ -37,4 +37,10 @@
      font-family:sans-serif;
      font-size:large;
      text-shadow: 3px 2px cornsilk;
+  }
+  .dates.h1{
+    color:chartreuse;
+  }
+  .c{
+    color:chartreuse;
   }

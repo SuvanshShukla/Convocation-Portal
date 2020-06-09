@@ -34,7 +34,7 @@ function Login() {
         <Row>
           <Col>
         
-            <div className="border text-center">
+            <div className="text-center">
               <h1>Manipal University Jaipur</h1>
             
           </div>
@@ -47,7 +47,7 @@ function Login() {
               className="mt-5 p-3 border text-center"
               style={{ backgroundColor: "white", borderRadius: 20 }}
             >
-              Please Enter Details to Register
+              <p className="highlight">Please Enter Details to Register</p>
               <Form>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>

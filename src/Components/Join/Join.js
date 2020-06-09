@@ -1,15 +1,15 @@
-import React,{Component} from "react";
-import "./Join.css";
-// import "./try.css";
+ import React,{Component} from "react";
+ import "./Join.css";
+ import "./sticky.css";
 // import Pay from "./Pay";
-import ReactDOM from 'react-dom';
+ import ReactDOM from 'react-dom';
 
 function Join(){
     return(
         <div class="dates">
           <p>Manipal University Jaipur, village-dehmi kalan ,Ajmer road ,Jaipur,Rajasthan,303007 </p>
           <div class="sticky">You are Welcome!</div>
-      <h1> when would you like to join the convocation event</h1>
+          <h1 className="c">when would you like to join the convocation event</h1>
        <div className="hey">
          <div class="container mt-3">
    
