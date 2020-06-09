@@ -43,15 +43,15 @@ var curtain = "";
 } */
 
 function hideAndSeek(input) {
-  var x = document.getElementById("attending");
-  var y = document.getElementById("notAttending");
-  y.style.display = "none";
+  var y = document.getElementById("attending");
+  var n = document.getElementById("notAttending");
+  n.style.display = "none";
   if (input == true) {
-    x.style.display = "block";
-    y.style.display = "none";
-  } else {
-    x.style.display = "none";
     y.style.display = "block";
+    n.style.display = "none";
+  } else if(input==false) {
+    y.style.display = "none";
+    n.style.display = "block";
   }
 }
 
@@ -336,7 +336,7 @@ function StudentInfo() {
               </Form.Row>
               <Form.Row>
                 <div id="attending">This is my DIV element.</div>
-                <div id="notAttending"></div>
+                <div id="notAttending" style={{display:"none"}}>something</div>
                 {/* <Form.Group as={Col} controlId="formGridLastName">
                       <Form.Label>last Name</Form.Label>
                       <Form.Control
