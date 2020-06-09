@@ -1,7 +1,7 @@
 import React from "react";
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Container, Button, Form, Row, Col, Tab, Tabs } from "react-bootstrap";
-// import { slide as Menu } from "react-burger-menu";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Container, Button, Form, Row, Col, Tab, Tabs, Nav, Navbar } from "react-bootstrap";
+import { slide as Menu } from "react-burger-menu";
 import "./studentInfo.css";
 
 var firstName,
@@ -46,11 +46,10 @@ function hideAndSeek(input) {
   var x = document.getElementById("attending");
   var y = document.getElementById("notAttending");
   y.style.display = "none";
-  if(input == true){
+  if (input == true) {
     x.style.display = "block";
     y.style.display = "none";
-  }
-  else {
+  } else {
     x.style.display = "none";
     y.style.display = "block";
   }
@@ -77,10 +76,36 @@ function submitAll() {
 function StudentInfo() {
   return (
     <div className="I">
+      <Navbar bg="dark" variant="dark">
+        <div>
+        <Menu>
+          <a id="home" className="menu-item" href="/">
+            Home
+          </a>
+          <a id="about" className="menu-item" href="/about">
+            About
+          </a>
+          <a id="contact" className="menu-item" href="/contact">
+            Contact
+          </a>
+          {/* <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a> */}
+        </Menu>
+        </div>
+        <Navbar.Brand href="#home">Manipal University Jaipur</Navbar.Brand>
+        <Nav className="mr-auto">
+          <Nav.Link href="#home"><Link to="/studentInfo">Dashboard</Link></Nav.Link>
+          <Nav.Link href="#features">Features</Nav.Link>
+          <Nav.Link href="#pricing">Pricing</Nav.Link>
+        </Nav>
+        <Form inline>
+          <Form.Control type="text" placeholder="Search" className="mr-sm-2" />
+          <Button variant="outline-info">Search</Button>
+        </Form>
+      </Navbar>
       <div>
-        <h5>Tabs go here</h5>
+        {/* <h5>Tabs go here</h5> */}
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
-          <Tab eventKey="home" title="Home" className="one">
+          <Tab eventKey="home" title="Student Info" className="one">
             <Container>
               <Row>
                 <Form>
@@ -276,7 +301,7 @@ function StudentInfo() {
               </Row>
             </Container>
           </Tab>
-          <Tab eventKey="payment" title="payment" className="two">
+          <Tab eventKey="payment" title="Payment" className="two">
             <Container>
               <Form.Row>
                 <fieldset>
@@ -291,7 +316,6 @@ function StudentInfo() {
                         label="Yes"
                         name="formHorizontalRadios"
                         id="formHorizontalRadios1"
-                        
                         onClick={() => {
                           hideAndSeek(true);
                         }}
@@ -323,13 +347,9 @@ function StudentInfo() {
                     </Form.Group>
                 
                         {document.getElementById("notAttending").setAttribute("display", "none")} */}
-                
               </Form.Row>
 
-              <Button
-                variant="primary"
-                type="button"
-              >
+              <Button variant="primary" type="button">
                 Submit
               </Button>
             </Container>
