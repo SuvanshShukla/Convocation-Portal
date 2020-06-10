@@ -1,11 +1,11 @@
-import React,{Component} from "react";
-import { BrowserRouter as Router,Route,Link } from "react-router-dom";
-import { Button, Carousel, Container, Row, Col, Form } from "react-bootstrap";
-import { slide as Menu } from "react-burger-menu";
-import ReactDOM from 'react-dom';
+import React,{Component} from "./node_modules/react";
+import { BrowserRouter as Router,Route,Link } from "./node_modules/react-router-dom";
+import { Button, Carousel, Container, Row, Col, Form } from "./node_modules/react-bootstrap";
+import { slide as Menu } from "./node_modules/react-burger-menu";
+import ReactDOM from './node_modules/react-dom';
 import "./Signup.css";
 //  import Login from "Components/Login/Login";
-import Login from "../Components/Login/Login"
+import Login from "../Login/Login"
  class Signup extends Component{
      constructor(props){
          super(props);

@@ -9,7 +9,7 @@ import Degree from "./Components/Degree/Degree";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // import Admin from './Components/Welcome/Admin';
 
-import Signup from "./Components/Signup";
+import Signup from "./Components/Signup/Signup";
 class App extends React.Component {
   constructor(props) {
     super(props);

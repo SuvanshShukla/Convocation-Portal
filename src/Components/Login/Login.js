@@ -4,7 +4,7 @@ import { Button, Carousel, Container, Row, Col, Form } from "react-bootstrap";
 import { slide as Menu } from "react-burger-menu";
 
 import "./styles.css";
-import Signup from "../Signup";
+import Signup from "../Signup/Signup";
 
 
 
