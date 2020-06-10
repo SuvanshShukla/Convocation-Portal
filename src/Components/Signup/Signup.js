@@ -24,24 +24,16 @@ function passCheck(password, confirm_password){
 function Signup() {
   return (
     <div>
-      {/* <Menu>
-        <a id="home" className="menu-item" href="/">
-          Home
-        </a>
-        <a id="about" className="menu-item" href="/about">
-          About
-        </a>
-        <a id="contact" className="menu-item" href="/contact">
-          Contact
-        </a>
-      </Menu> */}
       <div class="wrapper">
+      <h1 class ="MUJ">Manipal University Jaipur</h1>
         <div className="form-wrapper">
           <h1>Sign up</h1>
           <Form /* onSubmit={this.handleSubmit} */>
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
+              <div class="center">
                 <Form.Label>Email</Form.Label>
+                </div>
                 <Form.Control
                   type="email"
                   placeholder="Enter email"
@@ -54,10 +46,12 @@ function Signup() {
 
             <Form.Row>
               <Form.Group as={Col} controlId="formGridPassword">
+              <div class="center">
                 <Form.Label>Please enter your chosen password</Form.Label>
+                </div>
                 <Form.Control
                   type="email"
-                  placeholder="Enter email"
+                  placeholder="Enter your password"
                   onChange={(e) => {
                     password = e.target.value;
                   }}
@@ -67,10 +61,12 @@ function Signup() {
 
             <Form.Row>
               <Form.Group as={Col} controlId="formGridConfirmPassword">
+                <div class="center">
                 <Form.Label>Please confirm your password</Form.Label>
+                </div>
                 <Form.Control
                   type="email"
-                  placeholder="Enter email"
+                  placeholder="confirm password"
                   onChange={(e) => {
                     confirm_password = e.target.value;
                   }}
@@ -90,10 +86,10 @@ function Signup() {
                 Sign up
               </Button>
             </div>
-            <div>
+            <p>
               Already have an Account?
               <Link to="/Login">Click Here</Link>
-            </div>
+            </p>
           </Form>
         </div>
       </div>

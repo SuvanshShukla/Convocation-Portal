@@ -1,18 +1,14 @@
-import React from "react";
-// import "./Degree.css";
+import React,{Component} from "react";
+import "./Degree.css";
 import {Button} from "react-bootstrap";
 
 function Degree() {
   return (
     <div class="rooty1">
       <div className="rooty">
-        <h1>
-          NOTE: To get your degree <i class="fa fa-graduation-cap"></i> at your
-          doorstep by post you should make a payment of{" "}
-          <i class="fa fa-inr">2000</i>{" "}
-        </h1>
+      <h1>NOTE: To get your degree <i class='fa fa-graduation-cap'></i> at your doorstep by post you should make a payment of <i class="fa fa-inr">2000</i></h1>
 
-        <form /* onSubmit={this.handleSubmit} */>
+        <form type="submit">
           <div className="address_permanent">
             <label htmlFor="address_permanent">permanent address</label>
             <input
@@ -45,7 +41,7 @@ function Degree() {
             //   value={this.state.pincode}
             //   onChange={this.handleChange}
             />
-            <Button variant="primary" type="submit">submit</Button>
+            <Button variant="primary" type="submit" className="b">submit</Button>
           </div>
         </form>
       </div>
