@@ -7,8 +7,8 @@ import Welcome from "./Components/Welcome/Welcome"
 import Join from './Components/Join/Join';
 import Degree from "./Components/Degree/Degree";
 import Signup from "./Components/Signup/Signup";
+import Admin from './Components/Admin/Admin';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-// import Admin from './Components/Welcome/Admin';
 
 // import Signup from "./Components/Signup/Signup";
 class App extends React.Component {
@@ -31,7 +31,7 @@ class App extends React.Component {
         <Route path="/Welcome" exact render={props =>(<Welcome></Welcome>)} />
         <Route path="/Join" exact render={props => (<Join></Join>)} />
         <Route path="/Degree" exact render={props => (<Degree></Degree>)} />
-        {/* <Route path="/Admin" exact render={props=>(<Admin></Admin>)} /> */}
+        <Route path="/Admin" exact render={props=>(<Admin></Admin>)} />
       </Router>
     );
   }
