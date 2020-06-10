@@ -1,6 +1,25 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Signup.css";
+import { Button, Form, Col, Row } from "react-bootstrap";
+
+var email,
+  password,
+  confirm_password = "";
+
+function checkInput() {
+  console.log(email);
+  console.log(password);
+}
+
+function passCheck(password, confirm_password){
+  if(password == confirm_password){
+  console.log(confirm_password);
+  } else{
+    console.log("passwords don't match");
+    
+  }
+}
 
 function Signup() {
   return (
@@ -19,47 +38,63 @@ function Signup() {
       <div class="wrapper">
         <div className="form-wrapper">
           <h1>Sign up</h1>
-          <form /* onSubmit={this.handleSubmit} */>
-            <div className="email">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                placeholder="email"
-                name="email"
-                // value={this.state.email}
-                // onChange={this.handleChange}
-              />
-            </div>
+          <Form /* onSubmit={this.handleSubmit} */>
+            <Form.Row>
+              <Form.Group as={Col} controlId="formGridEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  onChange={(e) => {
+                    email = e.target.value;
+                  }}
+                />
+              </Form.Group>
+            </Form.Row>
 
-            <div className="password">
-              <label htmlFor="password">password</label>
-              <input
-                type="password"
-                placeholder="password"
-                name="password"
-                // value={this.state.password}
-                // onChange={this.handleChange2}
-              />
-            </div>
-            <div className="confirm_password">
-              <label htmlFor="confirm_password">confirm password</label>
-              <input
-                type="password"
-                placeholder="confirm your password"
-                name="confirm_password"
-                // value={this.state.confirm_password}
-                // onChange={this.handleChange3}
-              />
-            </div>
+            <Form.Row>
+              <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Label>Please enter your chosen password</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  onChange={(e) => {
+                    password = e.target.value;
+                  }}
+                />
+              </Form.Group>
+            </Form.Row>
+
+            <Form.Row>
+              <Form.Group as={Col} controlId="formGridConfirmPassword">
+                <Form.Label>Please confirm your password</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  onChange={(e) => {
+                    confirm_password = e.target.value;
+                  }}
+                />
+              </Form.Group>
+            </Form.Row>
 
             <div className="createAccount">
-              <button type="submit">Sign up</button>
-                <div>
-                  Already have an Account?
-                  <Link to="/Login">Click Here</Link>
-                </div>
+              <Button
+                type="button"
+                variant="success"
+                onClick={() => {
+                  checkInput();
+                  passCheck(password,confirm_password);
+                }}
+              >
+                Sign up
+              </Button>
             </div>
-          </form>
+            <div>
+              Already have an Account?
+              <Link to="/Login">Click Here</Link>
+            </div>
+          </Form>
         </div>
       </div>
     </div>
