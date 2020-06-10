@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Signup.css";
 import { Button, Form, Col, Row } from "react-bootstrap";
+import {slide as Menu}  from "react-burger-menu";
 
 var email,
   password,
@@ -24,6 +25,17 @@ function passCheck(password, confirm_password){
 function Signup() {
   return (
     <div>
+      <Menu>
+        <a id="Login" className="menu-item" href="/Login">
+          Login
+        </a>
+        <a id="about" className="menu-item" href="/about">
+          About
+        </a>
+        <a id="contact" className="menu-item" href="/contact">
+          Contact
+        </a>
+      </Menu>
       <div class="wrapper">
       <h1 class ="MUJ">Manipal University Jaipur</h1>
         <div className="form-wrapper">
@@ -50,7 +62,7 @@ function Signup() {
                 <Form.Label>Please enter your chosen password</Form.Label>
                 </div>
                 <Form.Control
-                  type="email"
+                  type="password"
                   placeholder="Enter your password"
                   onChange={(e) => {
                     password = e.target.value;
@@ -65,7 +77,7 @@ function Signup() {
                 <Form.Label>Please confirm your password</Form.Label>
                 </div>
                 <Form.Control
-                  type="email"
+                  type="password"
                   placeholder="confirm password"
                   onChange={(e) => {
                     confirm_password = e.target.value;

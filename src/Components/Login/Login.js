@@ -6,6 +6,14 @@ import { slide as Menu } from "react-burger-menu";
 import "./styles.css";
 import Signup from "../Signup/Signup";
 
+var email,
+password = "";
+
+function showCredentials(){
+  console.log(email);
+  console.log(password);
+}
+
 function Login() {
   return (
     <div
@@ -21,16 +29,15 @@ function Login() {
       }}
     >
       <Menu>
-        <a id="home" className="menu-item" href="/">
-          Home
-        </a>
         <a id="about" className="menu-item" href="/about">
           About
         </a>
         <a id="contact" className="menu-item" href="/contact">
           Contact
         </a>
-        {/* <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a> */}
+        <a id="Signup" className="menu-item" href="/Signup"> 
+          Sign up/Register
+        </a>
       </Menu>
       <Container>
         <Row>
@@ -53,7 +60,7 @@ function Login() {
                 <Form>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control type="email" placeholder="Enter email" onChange={(e) => {email = e.target.value}} />
                     <Form.Text className="text-muted">
                       We'll never share your email with anyone else.
                     </Form.Text>
@@ -61,7 +68,7 @@ function Login() {
 
                   <Form.Group controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="" />
+                    <Form.Control type="password" placeholder="" onChange={(e) =>{password = e.target.value}}/>
                   </Form.Group>
                   
                   <Route path="/Signup" exact strict component={<Signup />} />
@@ -72,7 +79,7 @@ function Login() {
                     </Link>
                   </ul>
 
-                  <Button variant="primary" type="submit">
+                  <Button variant="primary" type="button" onClick={() => {showCredentials()}}>
                     Sign in
                   </Button>
                 </Form>
