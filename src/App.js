@@ -6,10 +6,11 @@ import StudentInfo from "./Components/StudentInfo/StudentInfo";
 import Welcome from "./Components/Welcome/Welcome"
 import Join from './Components/Join/Join';
 import Degree from "./Components/Degree/Degree";
+import Signup from "./Components/Signup/Signup";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // import Admin from './Components/Welcome/Admin';
 
-import Signup from "./Components/Signup/Signup";
+// import Signup from "./Components/Signup/Signup";
 class App extends React.Component {
   constructor(props) {
     super(props);
