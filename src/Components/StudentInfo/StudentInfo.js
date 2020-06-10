@@ -24,11 +24,12 @@ var firstName,
   program,
   dept,
   gradyear,
-   gradmonth,
+  gradmonth,
   address,
   city,
   state,
-  zip = "";
+  zip,
+  familyCount = "";
 var curtain = "";
 
 /* function radio(){
@@ -80,26 +81,14 @@ function submitAll() {
   console.log(city);
   console.log(state);
   console.log(zip);
+  console.log(familyCount);
+  
 }
 
 function StudentInfo() {
   return (
     <div className="I">
       <Navbar bg="dark" variant="dark">
-     {/*   
-     <Menu menuClassName={"burger"} crossClassName={"crossButton"}>
-          <a id="home" className="menu-item" href="/">
-            Home
-          </a>
-          <a id="about" className="menu-item" href="/about">
-            About
-          </a>
-          <a id="contact" className="menu-item" href="/contact">
-            Contact
-          </a>
-          </Menu>
-      */} 
-        
         <Navbar.Brand href="#home">Manipal University Jaipur</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#home">
@@ -108,10 +97,6 @@ function StudentInfo() {
           <Nav.Link href="#features">Features</Nav.Link>
           <Nav.Link href="#pricing">Pricing</Nav.Link>
         </Nav>
-        <Form inline>
-          <Form.Control type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-info">Search</Button>
-        </Form>
       </Navbar>
       <div>
         {/* <h5>Tabs go here</h5> */}
@@ -347,7 +332,23 @@ function StudentInfo() {
                 </fieldset>
               </Form.Row>
               <Form.Row>
-                <div id="attending">This is my DIV element.</div>
+                <div id="attending">
+                  <Form>
+                    <Form.Row>
+                    <Form.Group as={Col} controlId="formGridFirstName">
+                      <Form.Label>Please enter how many family members will be attending (including you)</Form.Label>
+                      <Form.Control
+                        type="text"
+                        // placeholder="Enter First Name"
+                        onChange={(e) => {
+                          familyCount = e.target.value;
+                        }}
+                      />
+                    </Form.Group>
+                    </Form.Row>
+                  </Form>
+                  <Button variant="primary" type="button" onClick={() => {submitAll()}}>Submit</Button>
+                </div>
                 <div id="notAttending" style={{ display: "none" }}>
                   Please Click the following link to recieve degree by post
                   <br />
