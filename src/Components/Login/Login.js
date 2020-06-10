@@ -36,7 +36,9 @@ function Login() {
         <Row>
           <Col>
             <div className="text-center">
+              <div class="m">
               <h1>Manipal University Jaipur</h1>
+              </div>
             </div>
           </Col>
         </Row>
