@@ -31,6 +31,8 @@ var firstName,
   zip,
   familyCount = "";
 var curtain = "";
+var persons="";
+ 
 
 /* function radio(){
     var noRadio = document.getElementById("formHorizontalRadios2");
@@ -64,7 +66,9 @@ function hideAndSeek(input) {
     y.style.display = "block";
   }
 }
-
+function people(){
+  console.log(persons);
+}
 function submitAll() {
   console.log(firstName);
   console.log(lastName);
@@ -88,7 +92,8 @@ function setDate(date) {
   console.log(date);
 }
 
-function StudentInfo() {
+function StudentInfo(){
+  
   return (
     <div className="I">
       <Navbar bg="dark" variant="dark">
@@ -103,8 +108,8 @@ function StudentInfo() {
       </Navbar>
       <div>
         {/* <h5>Tabs go here</h5> */}
-        <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
-          <Tab eventKey="home" title="Student Info" className="one">
+        <Tabs defaultActiveKey="Student Info" id="uncontrolled-tab-example">
+          <Tab eventKey="Student Info" title="Student Info" className="one">
             <Container>
               <Row>
                 <Form>
@@ -300,7 +305,7 @@ function StudentInfo() {
               </Row>
             </Container>
           </Tab>
-          <Tab eventKey="payment" title="Payment" className="two">
+          <Tab eventKey="Event Info" title="Event Info" className="two">
             <Container>
               <Form.Row>
                 <fieldset>
@@ -339,19 +344,23 @@ function StudentInfo() {
                   <Form>
                     <Form.Row>
                       <Form.Group as={Col} controlId="formGridFirstName">
-                        <Form.Label>
-                          Please enter how many family members will be attending
-                          (including you)
-                        </Form.Label>
-                        <Form.Control
-                          type="text"
-                          onChange={(e) => {
-                            familyCount = e.target.value;
-                          }}
-                        />
+                        <h4>please select the number of people attending the event</h4>
+                      <form>
+                         <label htmlFor="quantity">People (between 1 and 4):</label>
+                         <input type="number" id="quantity" name="quantity" min="1" max="4"/>
+                         <input 
+                        onChange={(e) => {
+                          persons= e.target.value;
+                        }}
+                        onClick={() => {
+                          people();
+                        }}
+                        type="submit"/>
+                     </form>
+                        
                       </Form.Group>
                     </Form.Row>
-                    {/* Dates are here!!! */}
+                    {/* Dates are here!!! 
                     <h4>
                       Please select your date for attending the Convocation
                     </h4>
@@ -396,20 +405,14 @@ function StudentInfo() {
                         />
                       </Form.Group>
                     </Form.Row>
+                    */}
                   </Form>
-                  <Button
-                    variant="primary"
-                    type="button"
-                    onClick={() => {
-                      submitAll();
-                    }}
-                  >
-                    Submit
-                  </Button>
+                  
+                  <Link to="/Join" className="btn btn-primary">Choose your date</Link>
                 </div>
                 <div id="notAttending" style={{ display: "none" }}>
                   Please Click the following link to recieve degree by post
-                  <br />
+                  <br/>
                   <Button variant="outline-primary">
                     <Link to="/Degree">Get Degree By Post</Link>
                   </Button>

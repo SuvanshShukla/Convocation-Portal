@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Nav, Col, Row, Navbar, Container } from "react-bootstrap";
 import {Circle } from "rc-progress";
-
+import "./Admin.css";
 const loadingStyle ={
     width: "100px",
     height: "100px"
@@ -9,12 +9,13 @@ const loadingStyle ={
 
 function Admin() {
   return (
+    <div class="ba">
     <div>
       <Navbar bg="primary" variant="dark">
-        <Navbar.Brand href="#home">Manipal University Jaipur</Navbar.Brand>
+        <Navbar.Brand href="https://jaipur.manipal.edu/">Manipal University Jaipur</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/Welcome">Welcome</Nav.Link>
-          <Nav.Link href="/Admin">Dashboard</Nav.Link>
+          <Nav.Link href="/StudentInfo">Dashboard</Nav.Link>
           <Nav.Link href="#features">Features</Nav.Link>
           <Nav.Link href="#pricing">Pricing</Nav.Link>
         </Nav>
@@ -55,6 +56,7 @@ function Admin() {
           </Row>
         </Container>
       </div>
+    </div>
     </div>
   );
 }

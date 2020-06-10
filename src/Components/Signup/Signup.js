@@ -26,9 +26,7 @@ function Signup() {
   return (
     <div>
       <Menu>
-        <a id="Login" className="menu-item" href="/Login">
-          Login
-        </a>
+        
         <a id="manipalWebsite" className="menu-item" href="https://jaipur.manipal.edu/" target="_blank">
           Main Website (MUJ)
         </a>
@@ -37,6 +35,9 @@ function Signup() {
         </a>
         <a id="contact" className="menu-item" href="https://jaipur.manipal.edu/muj/contact-us.html" target="_blank">
           Contact
+        </a>
+        <a id="Login" className="menu-item" href="/Login">
+          Login
         </a>
       </Menu>
       <div class="wrapper">

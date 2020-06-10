@@ -1,0 +1,9 @@
+.ba{
+  background:url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100vh;
+    width: 100%;
+    color:rgb(223, 41, 71);
+}
