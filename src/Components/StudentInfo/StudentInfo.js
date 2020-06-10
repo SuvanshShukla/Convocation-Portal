@@ -339,7 +339,6 @@ function StudentInfo() {
                       <Form.Label>Please enter how many family members will be attending (including you)</Form.Label>
                       <Form.Control
                         type="text"
-                        // placeholder="Enter First Name"
                         onChange={(e) => {
                           familyCount = e.target.value;
                         }}

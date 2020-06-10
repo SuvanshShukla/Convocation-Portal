@@ -29,10 +29,13 @@ function Signup() {
         <a id="Login" className="menu-item" href="/Login">
           Login
         </a>
-        <a id="about" className="menu-item" href="/about">
+        <a id="manipalWebsite" className="menu-item" href="https://jaipur.manipal.edu/" target="_blank">
+          Main Website (MUJ)
+        </a>
+        <a id="about" className="menu-item" href="https://jaipur.manipal.edu/muj/about-us.html" target="_blank">
           About
         </a>
-        <a id="contact" className="menu-item" href="/contact">
+        <a id="contact" className="menu-item" href="https://jaipur.manipal.edu/muj/contact-us.html" target="_blank">
           Contact
         </a>
       </Menu>
