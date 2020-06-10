@@ -1,6 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Container, Button, Form, Row, Col, Tab, Tabs, Nav, Navbar } from "react-bootstrap";
+import {
+  Container,
+  Button,
+  Form,
+  Row,
+  Col,
+  Tab,
+  Tabs,
+  Nav,
+  Navbar,
+} from "react-bootstrap";
 import { slide as Menu } from "react-burger-menu";
 import "./studentInfo.css";
 
@@ -26,7 +36,6 @@ var curtain = "";
     var decision = noRadio.value;
     var yesRadio = document.getElementById("formHorizontalRadios1");
     var decision1 = yesRadio.value;
-
     if(decision || decision1 == "1"){
       console.log(decision);
     }
@@ -43,15 +52,15 @@ var curtain = "";
 } */
 
 function hideAndSeek(input) {
-  var y = document.getElementById("attending");
-  var n = document.getElementById("notAttending");
-  n.style.display = "none";
+  var x = document.getElementById("attending");
+  var y = document.getElementById("notAttending");
+  y.style.display = "none";
   if (input == true) {
-    y.style.display = "block";
-    n.style.display = "none";
-  } else if(input==false) {
+    x.style.display = "block";
     y.style.display = "none";
-    n.style.display = "block";
+  } else {
+    x.style.display = "none";
+    y.style.display = "block";
   }
 }
 
@@ -76,9 +85,8 @@ function submitAll() {
 function StudentInfo() {
   return (
     <div className="I">
-     
       <Navbar bg="dark" variant="dark">
-      <Menu menuClassName={"burger"} crossClassName={"crossButton"}>
+        <Menu menuClassName={"burger"} crossClassName={"crossButton"}>
           <a id="home" className="menu-item" href="/">
             Home
           </a>
@@ -92,7 +100,9 @@ function StudentInfo() {
         </Menu>
         <Navbar.Brand href="#home">Manipal University Jaipur</Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#home"><Link to="/studentInfo">Dashboard</Link></Nav.Link>
+          <Nav.Link href="#home">
+            <Link to="/studentInfo">Dashboard</Link>
+          </Nav.Link>
           <Nav.Link href="#features">Features</Nav.Link>
           <Nav.Link href="#pricing">Pricing</Nav.Link>
         </Nav>
@@ -336,21 +346,14 @@ function StudentInfo() {
               </Form.Row>
               <Form.Row>
                 <div id="attending">This is my DIV element.</div>
-                <div id="notAttending" style={{display:"none"}}>something</div>
-                {/* <Form.Group as={Col} controlId="formGridLastName">
-                      <Form.Label>last Name</Form.Label>
-                      <Form.Control
-                        type="text"
-                        placeholder="Enter last Name"
-                        />
-                    </Form.Group>
-                
-                        {document.getElementById("notAttending").setAttribute("display", "none")} */}
+                <div id="notAttending" style={{ display: "none" }}>
+                  Please Click the following link to recieve degree by post
+                  <br />
+                  <Button variant="outline-primary">
+                    <Link to="/Degree">Get Degree By Post</Link>
+                  </Button>
+                </div>
               </Form.Row>
-
-              <Button variant="primary" type="button">
-                Submit
-              </Button>
             </Container>
           </Tab>
         </Tabs>
