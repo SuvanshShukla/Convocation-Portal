@@ -82,7 +82,10 @@ function submitAll() {
   console.log(state);
   console.log(zip);
   console.log(familyCount);
-  
+}
+
+function setDate(date) {
+  console.log(date);
 }
 
 function StudentInfo() {
@@ -335,18 +338,74 @@ function StudentInfo() {
                 <div id="attending">
                   <Form>
                     <Form.Row>
-                    <Form.Group as={Col} controlId="formGridFirstName">
-                      <Form.Label>Please enter how many family members will be attending (including you)</Form.Label>
-                      <Form.Control
-                        type="text"
-                        onChange={(e) => {
-                          familyCount = e.target.value;
-                        }}
-                      />
-                    </Form.Group>
+                      <Form.Group as={Col} controlId="formGridFirstName">
+                        <Form.Label>
+                          Please enter how many family members will be attending
+                          (including you)
+                        </Form.Label>
+                        <Form.Control
+                          type="text"
+                          onChange={(e) => {
+                            familyCount = e.target.value;
+                          }}
+                        />
+                      </Form.Group>
+                    </Form.Row>
+                    {/* Dates are here!!! */}
+                    <h4>
+                      Please select your date for attending the Convocation
+                    </h4>
+                    <Form.Row>
+                      <Form.Group controlId="formBasicCheckbox10">
+                        <Form.Check
+                          type="checkbox"
+                          label="10th July"
+                          onClick={() => {
+                            setDate(10);
+                            document.getElementById("formBasicCheckbox12").setAttribute("disabled", true);
+                            document.getElementById("formBasicCheckbox14").setAttribute("disabled", true);
+                          }}
+                        />
+                      </Form.Group>
+                    </Form.Row>
+
+                    <Form.Row>
+                      <Form.Group controlId="formBasicCheckbox12">
+                        <Form.Check
+                          type="checkbox"
+                          label="12th July"
+                          onClick={() => {
+                            setDate(12);
+                            document.getElementById("formBasicCheckbox10").setAttribute("disabled", true);
+                            document.getElementById("formBasicCheckbox14").setAttribute("disabled", true);
+                          }}
+                        />
+                      </Form.Group>
+                    </Form.Row>
+
+                    <Form.Row>
+                      <Form.Group controlId="formBasicCheckbox14">
+                        <Form.Check
+                          type="checkbox"
+                          label="14th July"
+                          onClick={() => {
+                            setDate(14);
+                            document.getElementById("formBasicCheckbox10").setAttribute("disabled", true);
+                            document.getElementById("formBasicCheckbox12").setAttribute("disabled", true);
+                          }}
+                        />
+                      </Form.Group>
                     </Form.Row>
                   </Form>
-                  <Button variant="primary" type="button" onClick={() => {submitAll()}}>Submit</Button>
+                  <Button
+                    variant="primary"
+                    type="button"
+                    onClick={() => {
+                      submitAll();
+                    }}
+                  >
+                    Submit
+                  </Button>
                 </div>
                 <div id="notAttending" style={{ display: "none" }}>
                   Please Click the following link to recieve degree by post
