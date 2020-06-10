@@ -97,7 +97,7 @@ function StudentInfo() {
           <Nav.Link href="#home">
             <Link to="/studentInfo">Dashboard</Link>
           </Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
+          <Nav.Link href="/Welcome">Welcome</Nav.Link>
           <Nav.Link href="#pricing">Pricing</Nav.Link>
         </Nav>
       </Navbar>
