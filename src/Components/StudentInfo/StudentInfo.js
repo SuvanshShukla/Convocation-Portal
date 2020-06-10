@@ -24,7 +24,7 @@ var firstName,
   program,
   dept,
   gradyear,
-  gradmonth,
+   gradmonth,
   address,
   city,
   state,
@@ -86,7 +86,7 @@ function StudentInfo() {
   return (
     <div className="I">
       <Navbar bg="dark" variant="dark">
-        <Menu menuClassName={"burger"} crossClassName={"crossButton"}>
+        {/* <Menu menuClassName={"burger"} crossClassName={"crossButton"}>
           <a id="home" className="menu-item" href="/">
             Home
           </a>
@@ -96,8 +96,7 @@ function StudentInfo() {
           <a id="contact" className="menu-item" href="/contact">
             Contact
           </a>
-          {/* <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a> */}
-        </Menu>
+        </Menu> */}
         <Navbar.Brand href="#home">Manipal University Jaipur</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#home">
