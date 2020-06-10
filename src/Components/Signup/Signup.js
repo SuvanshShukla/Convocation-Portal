@@ -58,20 +58,6 @@ function Signup() {
                   Already have an Account?
                   <Link to="/Login">Click Here</Link>
                 </div>
-             {/*  <p>
-                <Router className="Next">
-                  <Route path="/Login" exact strict component={<Login />} />
-                  Already Have an Account ?{" "}
-                  <Link
-                    to="/Login"
-                    onClick={(event) => (window.location.href = "/Login")}
-                    exact
-                    strict
-                  >
-                    Sign in
-                  </Link>
-                </Router>
-              </p> */}
             </div>
           </form>
         </div>
