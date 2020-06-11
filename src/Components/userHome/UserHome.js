@@ -31,6 +31,15 @@ function UserHome() {
           </Col>
         </Row>        
       </Container>
+      <div>
+      <ul>
+            <li><Link to="login">Login</Link></li>
+            <li><Link to="Signup">Signup</Link></li>
+            <li><Link to="UserHome">UserHome</Link></li>
+            <li><Link to="StudentInfo">StudentInfo</Link></li>
+            <li><Link to="Welcome">Welcome</Link></li>
+          </ul>
+      </div>
     </div>
   );
 }
