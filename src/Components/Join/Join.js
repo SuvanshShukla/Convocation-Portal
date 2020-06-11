@@ -1,4 +1,5 @@
  import React,{Component} from "react";
+ import {Button} from "react-bootstrap";
  import "./Join.css";
  import "./sticky.css";
 
@@ -47,7 +48,7 @@ function Join(){
                         <label htmlFor="date3">3rd july 2020</label>
                               <br/>
                     
-                              <Router><Link to="/Pay" className="btn btn-primary">Submit</Link></Router> 
+                              <Button className="btn btn-primary"><Link to="/Pay">Submit</Link></Button>
                  </form>
                  
              </div>
