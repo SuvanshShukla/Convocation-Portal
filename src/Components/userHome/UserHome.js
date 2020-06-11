@@ -4,7 +4,15 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Button, Carousel, Container, Row, Col } from "react-bootstrap";
 import { slide as Menu } from "react-burger-menu";
 import "./UserHome.css";
+import axios from "axios";
 
+
+function getAll(){
+  axios.get("http://localhost:8080/steal").then(res =>{
+    console.log(res.data);
+    
+  })
+}
 
 
 function UserHome() {
@@ -35,7 +43,16 @@ function UserHome() {
         </Row>        
       </Container>
       <div>
-        
+      <ul>
+            <li><Link to="login">Login</Link></li>
+            <li><Link to="Signup">Signup</Link></li>
+            <li><Link to="UserHome">UserHome</Link></li>
+            <li><Link to="StudentInfo">StudentInfo</Link></li>
+            <li><Link to="Welcome">Welcome</Link></li>
+          </ul>
+      </div>
+      <div>
+        <Button onClick={() =>{getAll()}}>get(find all)</Button>
       </div>
     </div>
   );

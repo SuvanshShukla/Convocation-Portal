@@ -12,10 +12,31 @@ import {
   Nav,
   Navbar,
 } from "react-bootstrap";
+import axios from "axios";
 import { slide as Menu } from "react-burger-menu";
 
 
-var firstName,
+let obj = {
+  firstName:"",
+  lastName:"",
+  regno:"",
+  email:"",
+  studentNo:"",
+  parentNo:"",
+  bloodgrp:"",
+  program:"",
+  dept:"",
+  gradyear:"",
+  gradmonth:"",
+  address:"",
+  city:"",
+  state:"",
+  zip:"",
+  familyCount:"",
+  chosenDate:""
+}
+
+/* var firstName,
   lastName,
   regno,
   email,
@@ -33,7 +54,7 @@ var firstName,
   familyCount = "";
 var curtain = "";
 var persons="";
-var chosenDate = "";
+var chosenDate = ""; */
  
 
 /* function radio(){
@@ -76,22 +97,31 @@ function hideAndSeek(input) {
 
 
 function submitAll() {
-  console.log(firstName);
-  console.log(lastName);
-  console.log(regno);
-  console.log(email);
-  console.log(studentNo);
-  console.log(parentNo);
-  console.log(bloodgrp);
-  console.log(program);
-  console.log(dept);
-  console.log(gradyear);
-  console.log(gradmonth);
-  console.log(address);
-  console.log(city);
-  console.log(state);
-  console.log(zip);
-  console.log(familyCount);
+  console.log(obj.firstName);
+  console.log(obj.lastName);
+  console.log(obj.regno);
+  console.log(obj.email);
+  console.log(obj.studentNo);
+  console.log(obj.parentNo);
+  console.log(obj.bloodgrp);
+  console.log(obj.program);
+  console.log(obj.dept);
+  console.log(obj.gradyear);
+  console.log(obj.gradmonth);
+  console.log(obj.address);
+  console.log(obj.city);
+  console.log(obj.state);
+  console.log(obj.zip);
+  console.log(obj.familyCount);
+  console.log(obj);
+}
+
+function pushData(){
+  let data = obj;
+  axios.post ("http://localhost:8080/sendData", data).then(res =>{
+    console.log("sending data");
+    
+  })
 }
 
 
@@ -116,7 +146,7 @@ function resetDate(){
   document.getElementById("formHorizontalDateRadio10").disabled = false;/* setAttribute("disabled", "enabled"); */
   document.getElementById("formHorizontalDateRadio12").disabled = false;/* setAttribute("disabled", "enabled"); */
   document.getElementById("formHorizontalDateRadio14").disabled = false;/* setAttribute("disabled", "enabled"); */
-  console.log(chosenDate);  
+  console.log(obj.chosenDate);  
 }
 
 
@@ -149,7 +179,7 @@ function StudentInfo(){
                         type="text"
                         placeholder="Enter First Name"
                         onChange={(e) => {
-                          firstName = e.target.value;
+                          obj.firstName = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -160,7 +190,7 @@ function StudentInfo(){
                         type="text"
                         placeholder="Enter last Name"
                         onChange={(f) => {
-                          lastName = f.target.value;
+                          obj.lastName = f.target.value;
                         }}
                       />
                     </Form.Group>
@@ -172,7 +202,7 @@ function StudentInfo(){
                       <Form.Control
                         placeholder="e.g. 1790000..."
                         onChange={(e) => {
-                          regno = e.target.value;
+                          obj.regno = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -185,7 +215,7 @@ function StudentInfo(){
                         type="email"
                         placeholder="Enter email"
                         onChange={(e) => {
-                          email = e.target.value;
+                          obj.email = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -198,7 +228,7 @@ function StudentInfo(){
                         type="text"
                         placeholder="Enter Student Phone Number"
                         onChange={(e) => {
-                          studentNo = e.target.value;
+                          obj.studentNo = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -211,7 +241,7 @@ function StudentInfo(){
                         type="text"
                         placeholder="Enter Parent Phone Number"
                         onChange={(e) => {
-                          parentNo = e.target.value;
+                          obj.parentNo = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -223,7 +253,7 @@ function StudentInfo(){
                       <Form.Control
                         placeholder="e.g. A+,O-,AB+"
                         onChange={(e) => {
-                          bloodgrp = e.target.value;
+                          obj.bloodgrp = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -236,7 +266,7 @@ function StudentInfo(){
                         type="text"
                         placeholder="btech, ba, llb all small"
                         onChange={(e) => {
-                          program = e.target.value;
+                          obj.program = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -249,7 +279,7 @@ function StudentInfo(){
                         type="text"
                         placeholder="CS, IT, etc..."
                         onChange={(e) => {
-                          dept = e.target.value;
+                          obj.dept = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -262,7 +292,7 @@ function StudentInfo(){
                         type="text"
                         placeholder="Please enter your year of graduation"
                         onChange={(e) => {
-                          gradyear = e.target.value;
+                          obj.gradyear = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -273,7 +303,7 @@ function StudentInfo(){
                         type="text"
                         placeholder="Please enter graduation month"
                         onChange={(e) => {
-                          gradmonth = e.target.value;
+                          obj.gradmonth = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -285,7 +315,7 @@ function StudentInfo(){
                       <Form.Control
                         placeholder="Please enter full address e.g. House number, street, etc."
                         onChange={(e) => {
-                          address = e.target.value;
+                          obj.address = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -296,7 +326,7 @@ function StudentInfo(){
                       <Form.Label>City</Form.Label>
                       <Form.Control
                         onChange={(e) => {
-                          city = e.target.value;
+                          obj.city = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -306,7 +336,7 @@ function StudentInfo(){
                       <Form.Control
                         placeholder="e.g. rajasthan"
                         onChange={(e) => {
-                          state = e.target.value;
+                          obj.state = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -315,7 +345,7 @@ function StudentInfo(){
                       <Form.Label>Zip</Form.Label>
                       <Form.Control
                         onChange={(e) => {
-                          zip = e.target.value;
+                          obj.zip = e.target.value;
                         }}
                       />
                     </Form.Group>
@@ -326,6 +356,7 @@ function StudentInfo(){
                     type="button"
                     onClick={() => {
                       submitAll();
+                      pushData();
                     }}
                   >
                     Submit
@@ -379,7 +410,7 @@ function StudentInfo(){
                          <input type="number" id="quantity" name="quantity" min="1" max="4"/>
                          <input 
                         onChange={(e) => {
-                          familyCount= e.target.value;
+                          obj.familyCount= e.target.value;
                         }}
                         onClick={() => {
                           submitAll();
@@ -402,7 +433,7 @@ function StudentInfo(){
                         id="formHorizontalDateRadio10"
                         value="0"
                         disabled={false}
-                        onClick={() => {chosenDate ="10"}}
+                        onClick={() => {obj.chosenDate ="10"}}
                       />
                       </Form.Group>
                     </Form.Row>
@@ -415,7 +446,7 @@ function StudentInfo(){
                         name="formHorizontalRadios"
                         id="formHorizontalDateRadio12"
                         value="0"
-                        onClick={() => {chosenDate ="12"}}
+                        onClick={() => {obj.chosenDate ="12"}}
                         
                       />
                       </Form.Group>
@@ -429,13 +460,13 @@ function StudentInfo(){
                         name="formHorizontalRadios"
                         id="formHorizontalDateRadio14"
                         value="0"                
-                        onClick={() => {chosenDate ="14"}}
+                        onClick={() => {obj.chosenDate ="14"}}
                       />
                       </Form.Group>
                     </Form.Row>
 
-                    <Button onClick={() =>{setDate(chosenDate)}}>Set Date</Button>
-                    <Button onClick={() => { chosenDate = ""; resetDate();}}>Reset Date</Button>
+                    <Button onClick={() =>{setDate(obj.chosenDate)}}>Set Date</Button>
+                    <Button onClick={() => { obj.chosenDate = ""; resetDate();}}>Reset Date</Button>
                    
                   </Form>
                   
