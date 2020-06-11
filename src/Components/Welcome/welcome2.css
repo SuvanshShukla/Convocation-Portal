@@ -2,8 +2,8 @@
     background:url(https://i.ytimg.com/vi/F3BrKOi18lE/maxresdefault.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    height:100vh;
+    background-size:cover;
+    height:200vh;
     width: 100%;
 }
 .con{
@@ -11,3 +11,62 @@
     text-align: center;
     color:rgb(241, 16, 16);
 }
+/* video {
+    width: 100%;
+    height: auto;
+  }   */
+  .video-responsive{
+    overflow:hidden;
+    padding-bottom:350px;
+    position:relative;
+    height:0;
+    
+    
+}
+.video-responsive iframe{
+    left:2vh;
+    top:1vh;
+    height:50vh;
+    width:35%;
+    position:absolute;
+    float:left;
+    
+    
+    
+}
+.video-responsive2{
+    overflow:hidden;
+    padding-bottom:350px;
+    padding-top:0px;
+    position:relative;
+    height:0;
+    
+    
+}
+.video-responsive2 iframe{
+    right:2vh;
+    top:0vh;
+    height:50vh;
+    width:35%;
+    position:absolute;
+    float:right;
+   
+    
+    
+}
+/*.d{
+    display: inline-block;
+}
+*/
+.log{
+    opacity:0.72;
+}
+.welcome h2{
+ color: chartreuse;
+}
+.border{
+    border-style: groove;
+    background-color:yellow;
+    box-sizing: content-box;
+}
+
