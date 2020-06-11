@@ -32,6 +32,7 @@ var firstName,
   familyCount = "";
 var curtain = "";
 var persons="";
+var chosenDate = "";
  
 
 /* function radio(){
@@ -95,19 +96,28 @@ function submitAll() {
 
 function setDate(date) {
   if(date == 10){
-    document.getElementById("formBasicCheckbox12").setAttribute("disabled", true);
-    document.getElementById("formBasicCheckbox14").setAttribute("disabled", true);
+    document.getElementById("formHorizontalDateRadio14").disabled = true;/* setAttribute("disabled", true); */
+    document.getElementById("formHorizontalDateRadio12").disabled = true;/* setAttribute("disabled", true); */
   }else if(date == 12){
-    document.getElementById("formBasicCheckbox10").setAttribute("disabled", true);
-    document.getElementById("formBasicCheckbox14").setAttribute("disabled", true);
+    document.getElementById("formHorizontalDateRadio10").disabled = true;/* setAttribute("disabled", true); */
+    document.getElementById("formHorizontalDateRadio14").disabled = true;/* setAttribute("disabled", true); */
   }else if(date ==14){
-    document.getElementById("formBasicCheckbox10").setAttribute("disabled", true);
-    document.getElementById("formBasicCheckbox14").setAttribute("disabled", true); 
+    document.getElementById("formHorizontalDateRadio10").disabled = true;/* setAttribute("disabled", true); */
+    document.getElementById("formHorizontalDateRadio12").disabled = true;/* setAttribute("disabled", true);  */
   }
-
-
   console.log(date);
 }
+
+function resetDate(){
+  document.getElementById("formHorizontalDateRadio10").checked = false;
+  document.getElementById("formHorizontalDateRadio12").checked = false;
+  document.getElementById("formHorizontalDateRadio14").checked = false;
+  document.getElementById("formHorizontalDateRadio10").disabled = false;/* setAttribute("disabled", "enabled"); */
+  document.getElementById("formHorizontalDateRadio12").disabled = false;/* setAttribute("disabled", "enabled"); */
+  document.getElementById("formHorizontalDateRadio14").disabled = false;/* setAttribute("disabled", "enabled"); */
+  console.log(chosenDate);  
+}
+
 
 
 
@@ -384,45 +394,47 @@ function StudentInfo(){
                     </h4>
                     <Form.Row>
                       <Form.Group controlId="formBasicCheckbox10">
-                        <Form.Check
-                          type="checkbox"
-                          label="10th July"
-                          onClick={() => {
-                            setDate(10);
-                            // document.getElementById("formBasicCheckbox12").setAttribute("disabled", true);
-                            // document.getElementById("formBasicCheckbox14").setAttribute("disabled", true);
-                          }}
-                        />
+                      <Form.Check
+                        type="radio"
+                        label="10th July"
+                        name="formHorizontalRadios"
+                        id="formHorizontalDateRadio10"
+                        value="0"
+                        disabled={false}
+                        onClick={() => {chosenDate ="10"}}
+                      />
                       </Form.Group>
                     </Form.Row>
 
                     <Form.Row>
                       <Form.Group controlId="formBasicCheckbox12">
-                        <Form.Check
-                          type="checkbox"
-                          label="12th July"
-                          onClick={() => {
-                            setDate(12);
-                            // document.getElementById("formBasicCheckbox10").setAttribute("disabled", true);
-                            // document.getElementById("formBasicCheckbox14").setAttribute("disabled", true);
-                          }}
-                        />
+                      <Form.Check
+                        type="radio"
+                        label="12th July"
+                        name="formHorizontalRadios"
+                        id="formHorizontalDateRadio12"
+                        value="0"
+                        onClick={() => {chosenDate ="12"}}
+                        
+                      />
                       </Form.Group>
                     </Form.Row>
 
                     <Form.Row>
                       <Form.Group controlId="formBasicCheckbox14">
-                        <Form.Check
-                          type="checkbox"
-                          label="14th July"
-                          onClick={() => {
-                            setDate(14);
-                            // document.getElementById("formBasicCheckbox10").setAttribute("disabled", true);
-                            // document.getElementById("formBasicCheckbox12").setAttribute("disabled", true);
-                          }}
-                        />
+                      <Form.Check
+                        type="radio"
+                        label="14th July"
+                        name="formHorizontalRadios"
+                        id="formHorizontalDateRadio14"
+                        value="0"                
+                        onClick={() => {chosenDate ="14"}}
+                      />
                       </Form.Group>
                     </Form.Row>
+
+                    <Button onClick={() =>{setDate(chosenDate)}}>Set Date</Button>
+                    <Button onClick={() => { chosenDate = ""; resetDate();}}>Reset Date</Button>
                    
                   </Form>
                   
