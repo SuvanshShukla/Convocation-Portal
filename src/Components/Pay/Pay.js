@@ -13,14 +13,15 @@ function Pay() {
         <div className="hello">
           <i className="fa fa-spinner fa-spin">pay your fees here</i>
         </div>
-
+     
         <form>
-          <input type="radio" name="gender" value="male" />
-          PAYTM
-          <input type="radio" name="gender" value="female" />
-          DEBIT CARD
-          <input type="radio" name="gender" value="other" /> Others
+         <span class="h"> <input type="radio" name="gender" value="male" />
+          PAYTM </span>
+          < span class="h"><input type="radio" name="gender" value="female" />
+          DEBIT CARD</span>
+          < span class="h"><input type="radio" name="gender" value="other" /> Others</span>
         </form>
+        
       </div>
     </div>
   );
