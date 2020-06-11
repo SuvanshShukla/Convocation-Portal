@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function Join(){
     return(
-        <Router>
+        <div>
         <div class="dates">
           <p>Manipal University Jaipur, village-dehmi kalan ,Ajmer road ,Jaipur,Rajasthan,303007 </p>
           <div class="sticky">You are Welcome!</div>
@@ -23,7 +23,7 @@ function Join(){
                        
                         <label htmlFor="date1">1st july 2020</label>
                               <br/>                    
-                              <Router><Link to="/Pay" className="btn btn-primary">Submit</Link></Router>
+                              <Button><Link to="/Pay">Submit</Link></Button>
              </form>
          </div>
           
@@ -35,7 +35,7 @@ function Join(){
                          
                          <label htmlFor="date2">2nd july 2020</label>
                                <br/>
-                               <Router> <Link to="/Pay" className="btn btn-primary">Submit</Link></Router>
+                               <Button> <Link to="/Pay">Submit</Link></Button>
                          
                  </form>
              </div>
@@ -48,7 +48,7 @@ function Join(){
                         <label htmlFor="date3">3rd july 2020</label>
                               <br/>
                     
-                              <Button className="btn btn-primary"><Link to="/Pay">Submit</Link></Button>
+                              <Button><Link to="/Pay">Submit</Link></Button>
                  </form>
                  
              </div>
@@ -56,7 +56,7 @@ function Join(){
  
              </div>
         </div>
-        </Router>
+        </div>
       );
 }
 

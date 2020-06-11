@@ -66,9 +66,13 @@ function hideAndSeek(input) {
     y.style.display = "block";
   }
 }
-function people(){
+
+
+/* function people(){
   console.log(persons);
-}
+} */
+
+
 function submitAll() {
   console.log(firstName);
   console.log(lastName);
@@ -88,12 +92,26 @@ function submitAll() {
   console.log(familyCount);
 }
 
+
 function setDate(date) {
+  if(date == 10){
+    document.getElementById("formBasicCheckbox12").setAttribute("disabled", true);
+    document.getElementById("formBasicCheckbox14").setAttribute("disabled", true);
+  }else if(date == 12){
+    document.getElementById("formBasicCheckbox10").setAttribute("disabled", true);
+    document.getElementById("formBasicCheckbox14").setAttribute("disabled", true);
+  }else if(date ==14){
+    document.getElementById("formBasicCheckbox10").setAttribute("disabled", true);
+    document.getElementById("formBasicCheckbox14").setAttribute("disabled", true); 
+  }
+
+
   console.log(date);
 }
 
-function StudentInfo(){
-  
+
+
+function StudentInfo(){  
   return (
     <div className="I">
       <Navbar bg="dark" variant="dark">
@@ -350,17 +368,17 @@ function StudentInfo(){
                          <input type="number" id="quantity" name="quantity" min="1" max="4"/>
                          <input 
                         onChange={(e) => {
-                          persons= e.target.value;
+                          familyCount= e.target.value;
                         }}
                         onClick={() => {
-                          people();
+                          submitAll();
                         }}
                         type="submit"/>
                      </form>
                         
                       </Form.Group>
                     </Form.Row>
-                    {/* Dates are here!!! 
+                    {/* Dates are here!!!  */}
                     <h4>
                       Please select your date for attending the Convocation
                     </h4>
@@ -371,8 +389,8 @@ function StudentInfo(){
                           label="10th July"
                           onClick={() => {
                             setDate(10);
-                            document.getElementById("formBasicCheckbox12").setAttribute("disabled", true);
-                            document.getElementById("formBasicCheckbox14").setAttribute("disabled", true);
+                            // document.getElementById("formBasicCheckbox12").setAttribute("disabled", true);
+                            // document.getElementById("formBasicCheckbox14").setAttribute("disabled", true);
                           }}
                         />
                       </Form.Group>
@@ -385,8 +403,8 @@ function StudentInfo(){
                           label="12th July"
                           onClick={() => {
                             setDate(12);
-                            document.getElementById("formBasicCheckbox10").setAttribute("disabled", true);
-                            document.getElementById("formBasicCheckbox14").setAttribute("disabled", true);
+                            // document.getElementById("formBasicCheckbox10").setAttribute("disabled", true);
+                            // document.getElementById("formBasicCheckbox14").setAttribute("disabled", true);
                           }}
                         />
                       </Form.Group>
@@ -399,13 +417,13 @@ function StudentInfo(){
                           label="14th July"
                           onClick={() => {
                             setDate(14);
-                            document.getElementById("formBasicCheckbox10").setAttribute("disabled", true);
-                            document.getElementById("formBasicCheckbox12").setAttribute("disabled", true);
+                            // document.getElementById("formBasicCheckbox10").setAttribute("disabled", true);
+                            // document.getElementById("formBasicCheckbox12").setAttribute("disabled", true);
                           }}
                         />
                       </Form.Group>
                     </Form.Row>
-                    */}
+                   
                   </Form>
                   
                   <Link to="/Join" className="btn btn-primary">Choose your date</Link>
