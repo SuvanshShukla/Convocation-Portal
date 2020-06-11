@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./studentInfo.css";
 import {
   Container,
   Button,
@@ -12,7 +13,7 @@ import {
   Navbar,
 } from "react-bootstrap";
 import { slide as Menu } from "react-burger-menu";
-import "./studentInfo.css";
+
 
 var firstName,
   lastName,

@@ -34,7 +34,7 @@ class App extends React.Component {
         <Route path="/Degree" exact render={props => (<Degree></Degree>)} />
         <Route path="/Admin" exact render={props=>(<Admin></Admin>)} />
         <Route path="/Pay" exact render={props=>(<Pay></Pay>)} />
-        {/*  */}
+      
       </Router>
       
     );
