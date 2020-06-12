@@ -11,15 +11,18 @@ const loadingStyle = {
 };
 
 
-let convoDates = {
+var convoDates = {
   firstDay: "",
   secondDay: "",
   thirdDay: ""
 }
 
+var lol = [];
+
 function getConvocationDates(){
   axios.get("http://localhost:8080/getDates").then(res =>{
     console.log(res.data);     
+    lol = res.data;
     convoDates.firstDay = res.data[0].firstDate;
     convoDates.secondDay = res.data[0].secondDate;
     convoDates.thirdDay = res.data[0].thirdDate;
@@ -100,7 +103,8 @@ function Admin() {
                 {getConvocationDates()}
               These are the current dates for the convocation:
               <ul>
-                <li>Convocation Day 1 : {convoDates.firstDay}</li>
+                <li>Convocation Day 1 : {Object.values(convoDates)}</li>
+                {/* {console.log(lol)} */}
                 <li>Convocation Day 2 : {convoDates.secondDay}</li>
                 <li>Convocation Day 3 : {convoDates.thirdDay}</li>
               </ul>
