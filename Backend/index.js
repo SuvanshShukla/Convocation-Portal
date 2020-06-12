@@ -1,18 +1,20 @@
-const express = require("express");
-const cors = require("cors")
-const bodyParser = require("body-parser");
-const mongoose = require('mongoose');
+const express = require("express"); //used in creating a server
+const cors = require("cors")    //used in front-to-back connection necessary for functionality
+const bodyParser = require("body-parser");  //used to parse data being passed from the body of the frontend
+const mongoose = require('mongoose');   //used to code the specifics of the DB 
 
-const server = express();
+const server = express();   //establishing the server
 
 server.use(cors())
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: false}));
 
-mongoose.connect('mongodb://localhost:27017/convocationdb', {useNewUrlParser: true});
 
-const Schema  = mongoose.Schema;
-const studentInfoSchema = new Schema({
+mongoose.connect('mongodb://localhost:27017/convocationdb', {useNewUrlParser: true}); 
+//useNewUrlParser is used to fix deprecation warnings
+
+const Schema  = mongoose.Schema; //making a new instance of schema 
+const studentInfoSchema = new Schema({  //adding details of what the shcma contains
   firstName:String,
   lastName:String,
   regno:String,
@@ -32,8 +34,10 @@ const studentInfoSchema = new Schema({
   chosenDate:String
 })
 
-const studentInfo = mongoose.model("studentInfo", studentInfoSchema);
+const studentInfo = mongoose.model("studentInfo", studentInfoSchema);   //creating a new instance of mongoose model
 
+
+//used to POST data to DB
 server.post("/sendData", function(req,res){
     const doc = new studentInfo();
     doc.firstName = req.body.firstName;
@@ -56,6 +60,7 @@ server.post("/sendData", function(req,res){
     console.log(doc);
 })
 
+//to GET all info in DB
 server.get("/steal", function(req,res){
     studentInfo.find({}, function(err, docs){
         console.log("these are all the collections in our database:");        
