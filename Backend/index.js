@@ -76,8 +76,21 @@ server.get("/steal", function(req,res){
     })
 })
 
+
+server.get("/getDates", function(req, res){
+    convocationDates.find({}, function(err, docs){
+        console.log("These are the dates in the Database:");
+        console.log(docs);
+        res.json(docs);
+        
+    })
+})
+
+
+
+
 //setting preliminary dates for convocation 
-server.post("/setDates", function(req, res){
+/* server.post("/setDates", function(req, res){
     const g = new convocationDates();
     g.firstDate = "10th July";
     g.secondDate = "12th July";
@@ -86,7 +99,7 @@ server.post("/setDates", function(req, res){
     res.json(g);
     console.log(g);
 })
-
+ */
 //Database was successfully connected using this block of code
 /* server.post("/post", function(req,res){
     let doc = new studentInfo();

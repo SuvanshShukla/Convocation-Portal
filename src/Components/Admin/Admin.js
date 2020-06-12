@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Nav, Col, Row, Navbar, Container, Tabs, Tab, Form } from "react-bootstrap";
+import axios from "axios";
 import { Circle } from "rc-progress";
-import "./Admin.css";
+// import "./Admin.css";
 
 
 const loadingStyle = {
@@ -10,10 +11,22 @@ const loadingStyle = {
 };
 
 
-var convoDates = {
+let convoDates = {
   firstDay: "",
   secondDay: "",
   thirdDay: ""
+}
+
+function getConvocationDates(){
+  axios.get("http://localhost:8080/getDates").then(res =>{
+    console.log(res.data);     
+    convoDates.firstDay = res.data[0].firstDate;
+    convoDates.secondDay = res.data[0].secondDate;
+    convoDates.thirdDay = res.data[0].thirdDate;
+    console.log(convoDates.firstDay);
+    console.log(convoDates.secondDay);
+    console.log(convoDates.thirdDay);  
+  })
 }
 
 function modifyDates(){
@@ -84,6 +97,7 @@ function Admin() {
           <Tabs defaultActiveKey="modifyDates" id="adminTabs">
             <Tab eventKey="modifyDates" title="Modify Dates">
               <div id="currentDatesBlock">
+                {getConvocationDates()}
               These are the current dates for the convocation:
               <ul>
                 <li>Convocation Day 1 : {convoDates.firstDay}</li>
