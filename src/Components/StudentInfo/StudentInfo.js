@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./studentInfo.css";
+import axios from "axios";
 import {
   Container,
   Button,
@@ -12,7 +13,6 @@ import {
   Nav,
   Navbar,
 } from "react-bootstrap";
-import axios from "axios";
 
 
 let obj = {

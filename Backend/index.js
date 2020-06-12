@@ -36,6 +36,13 @@ const studentInfoSchema = new Schema({  //adding details of what the shcma conta
 
 const studentInfo = mongoose.model("studentInfo", studentInfoSchema);   //creating a new instance of mongoose model
 
+const convocationDatesSchema = new Schema({
+    firstDate:String,
+    secondDate:String,
+    thirdDate:String
+})
+
+const convocationDates = mongoose.model("convocationDates", convocationDatesSchema);
 
 //used to POST data to DB
 server.post("/sendData", function(req,res){
@@ -67,6 +74,17 @@ server.get("/steal", function(req,res){
         console.log(docs);
         res.json(docs);        
     })
+})
+
+//setting preliminary dates for convocation 
+server.post("/setDates", function(req, res){
+    const g = new convocationDates();
+    g.firstDate = "10th July";
+    g.secondDate = "12th July";
+    g.thirdDate = "14th July";
+    g.save();
+    res.json(g);
+    console.log(g);
 })
 
 //Database was successfully connected using this block of code
