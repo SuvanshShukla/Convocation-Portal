@@ -13,7 +13,6 @@ import {
   Navbar,
 } from "react-bootstrap";
 import axios from "axios";
-import { slide as Menu } from "react-burger-menu";
 
 
 let obj = {
@@ -36,46 +35,7 @@ let obj = {
   chosenDate:""
 }
 
-/* var firstName,
-  lastName,
-  regno,
-  email,
-  studentNo,
-  parentNo,
-  bloodgrp,
-  program,
-  dept,
-  gradyear,
-  gradmonth,
-  address,
-  city,
-  state,
-  zip,
-  familyCount = "";
-var curtain = "";
-var persons="";
-var chosenDate = ""; */
- 
 
-/* function radio(){
-    var noRadio = document.getElementById("formHorizontalRadios2");
-    var decision = noRadio.value;
-    var yesRadio = document.getElementById("formHorizontalRadios1");
-    var decision1 = yesRadio.value;
-    if(decision || decision1 == "1"){
-      console.log(decision);
-    }
-    else {
-      console.log("not selected!!");
-      
-    }
-    
-  } */
-
-/* function show(x) {
-  curtain = x;
-  console.log(curtain);
-} */
 
 function hideAndSeek(input) {
   var x = document.getElementById("attending");
@@ -91,9 +51,6 @@ function hideAndSeek(input) {
 }
 
 
-/* function people(){
-  console.log(persons);
-} */
 
 
 function submitAll() {
