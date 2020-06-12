@@ -77,14 +77,16 @@ server.get("/steal", function(req,res){
 })
 
 
-server.get("/getDates", function(req, res){
+
+//attempt to modify dates from admin page
+/* server.get("/getDates", function(req, res){
     convocationDates.find({}, function(err, docs){
         console.log("These are the dates in the Database:");
         console.log(docs);
         res.json(docs);
         
     })
-})
+}) */
 
 
 
