@@ -2,6 +2,8 @@ import React from "react";
 import { Button, Nav, Col, Row, Navbar, Container, Tabs, Tab, Form } from "react-bootstrap";
 import axios from "axios";
 import { Circle } from "rc-progress";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 // import "./Admin.css";
 
 
@@ -35,7 +37,12 @@ function modifyDates(){
   
 } */
 
-function Admin(convoDates) {
+
+// let records = [];
+
+
+
+function Admin({studentRecords, getRecs}) {
   return (
     <div class="ba">
       <div>
@@ -98,7 +105,6 @@ function Admin(convoDates) {
           <Tabs defaultActiveKey="modifyDates" id="adminTabs">
             <Tab eventKey="modifyDates" title="Modify Dates">
               <div id="currentDatesBlock">
-                {getConvocationDates()}
               These are the current dates for the convocation:
               <ul>
                 <li>Convocation Day 1 : 10th July</li>
@@ -106,6 +112,7 @@ function Admin(convoDates) {
                 <li>Convocation Day 3 : 14th July</li>
               </ul>
               </div>
+              {/* {console.log(recs)} */}
               {/* <div>
                 <ul>
                   <li>
@@ -130,9 +137,11 @@ function Admin(convoDates) {
               {/* <Button onClick={() => {modifyDates()}}>Change Dates</Button> */}
             </Tab>
             <Tab eventKey="view" title="View">
-              <Button>Click here to view all student records</Button>
-            </Tab>
-            
+              <Button onClick={() => {getRecs()}}>Click here to view all student records</Button>
+             {studentRecords.map((x,i) => (
+               <div>{x.firstName}</div>
+             ))}
+            </Tab>            
           </Tabs>
         </div>
       </div>

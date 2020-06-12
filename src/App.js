@@ -10,6 +10,7 @@ import Signup from "./Components/Signup/Signup";
 import Admin from './Components/Admin/Admin';
 import Pay from "./Components/Pay/Pay";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import axios from "axios";
 
 // import Signup from "./Components/Signup/Signup";
 class App extends React.Component {
@@ -17,9 +18,20 @@ class App extends React.Component {
     super(props);
     this.state = {};
     this.state ={
-      name: "",
+      records: [],
     } ;
   }
+
+  getAll(){
+    axios.get("http://localhost:8080/steal").then(res =>{
+      this.setState({
+        records: res.data
+      })
+      console.log(res.data);    
+      console.log(this.state.records);
+    })
+  }
+
 
   render(){
     return(
@@ -32,7 +44,7 @@ class App extends React.Component {
         <Route path="/Welcome" exact render={props =>(<Welcome></Welcome>)} />
         <Route path="/Join" exact render={props => (<Join></Join>)} />
         <Route path="/Degree" exact render={props => (<Degree></Degree>)} />
-        <Route path="/Admin" exact render={props=>(<Admin></Admin>)} />
+        <Route path="/Admin" exact render={(props) => (<Admin {...props} studentRecords={this.state.records} getRecs={this.getAll.bind(this)}/>)} />
         <Route path="/Pay" exact render={props=>(<Pay></Pay>)} />
       
       </Router>
