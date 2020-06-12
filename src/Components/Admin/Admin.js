@@ -1,17 +1,27 @@
 import React from "react";
-import { Button, Nav, Col, Row, Navbar, Container, Tabs, Tab, Form } from "react-bootstrap";
+import {
+  Button,
+  Nav,
+  Col,
+  Row,
+  Navbar,
+  Container,
+  Tabs,
+  Tab,
+  Form,
+  Card,
+  Accordion,
+} from "react-bootstrap";
 import axios from "axios";
 import { Circle } from "rc-progress";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 // import "./Admin.css";
 
-
 const loadingStyle = {
   width: "100px",
   height: "100px",
 };
-
 
 /* var convoDates = {
   firstDay: "",
@@ -37,12 +47,9 @@ function modifyDates(){
   
 } */
 
-
 // let records = [];
 
-
-
-function Admin({studentRecords, getRecs}) {
+function Admin({ studentRecords, getRecs }) {
   return (
     <div class="ba">
       <div>
@@ -100,17 +107,16 @@ function Admin({studentRecords, getRecs}) {
 
         <hr />
 
-
         <div>
           <Tabs defaultActiveKey="modifyDates" id="adminTabs">
             <Tab eventKey="modifyDates" title="Modify Dates">
               <div id="currentDatesBlock">
-              These are the current dates for the convocation:
-              <ul>
-                <li>Convocation Day 1 : 10th July</li>
-                <li>Convocation Day 2 : 12th July</li>
-                <li>Convocation Day 3 : 14th July</li>
-              </ul>
+                These are the current dates for the convocation:
+                <ul>
+                  <li>Convocation Day 1 : 10th July</li>
+                  <li>Convocation Day 2 : 12th July</li>
+                  <li>Convocation Day 3 : 14th July</li>
+                </ul>
               </div>
               {/* {console.log(recs)} */}
               {/* <div>
@@ -133,15 +139,55 @@ function Admin({studentRecords, getRecs}) {
                   </li>
                 </ul>
               </div> */}
-              
+
               {/* <Button onClick={() => {modifyDates()}}>Change Dates</Button> */}
             </Tab>
             <Tab eventKey="view" title="View">
-              <Button onClick={() => {getRecs()}}>Click here to view all student records</Button>
-             {studentRecords.map((x,i) => (
-               <div>{x.firstName}</div>
-             ))}
-            </Tab>            
+              <Button
+                onClick={() => {
+                  getRecs();
+                }}
+              >
+                Click here to view all student records
+              </Button>
+              {studentRecords.map((x, i) => (
+                //  <div>{x.firstName}</div>
+                <div>
+                  <Accordion>
+                    <Card>
+                      <Card.Header>
+                        <Accordion.Toggle
+                          as={Button}
+                          variant="link"
+                          eventKey="0"
+                        >
+                          <h5>{x.firstName}</h5>
+                        </Accordion.Toggle>
+                      </Card.Header>
+                      <Accordion.Collapse eventKey="0">
+                        <Card.Body>
+                          Last Name : {x.lastName} <br />
+                          Registration Number : {x.regno} <br />
+                          Email ID : {x.email} <br />
+                          Student Phone Number : {x.studentNo} <br />
+                          Parent Phone Number : {x.patentNo} <br />
+                          Student Blood Type : {x.bloodgrp} <br />
+                          Program : {x.program} <br />
+                          Department : {x.dept} <br />
+                          Year of Graduation : {x.gradyear} <br />
+                          Month of Graduation : {x.gradmonth} <br />
+                          Address : {x.address} <br />
+                          City : {x.city} <br />
+                          Zip Code : {x.zip} <br />
+                          Number of Family Members Attending : {x.familyCount} <br />
+                          Attending on Date : {x.chosenDate} <br />
+                        </Card.Body>
+                      </Accordion.Collapse>
+                    </Card>
+                  </Accordion>
+                </div>
+              ))}
+            </Tab>
           </Tabs>
         </div>
       </div>
