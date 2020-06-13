@@ -21,7 +21,7 @@ function Join(){
                
                         <input type="checkbox" id="defaultCheck" name="example2"/>
                        
-                        <span class="h"><label htmlFor="date1">1st july 2020</label></span>
+                        <span class="h"><label htmlFor="date1">10 july 2020</label></span>
                               <br/>                    
                               <Button><Link to="/Pay">Submit</Link></Button>
              </form>
@@ -33,7 +33,7 @@ function Join(){
                  <form >
                          <input type="checkbox" id="defaultCheck" name="example2"/>
                          
-                         <span class="h"><label htmlFor="date2">2nd july 2020</label></span>
+                         <span class="h"><label htmlFor="date2">11 july 2020</label></span>
                                <br/>
                                <Button> <Link to="/Pay">Submit</Link></Button>
                          
@@ -45,7 +45,7 @@ function Join(){
                  <form >
                   
                         <input type="checkbox" id="defaultCheck" name="example2"/>
-                       <span class="h"><label htmlFor="date3">3rd july 2020</label></span>
+                       <span class="h"><label htmlFor="date3">12 july 2020</label></span>
                               <br/>
                     
                               <Button><Link to="/Pay">Submit</Link></Button>
