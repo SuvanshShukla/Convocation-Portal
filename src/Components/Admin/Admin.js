@@ -16,7 +16,7 @@ import axios from "axios";
 import { Circle } from "rc-progress";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-// import "./Admin.css";
+ import "./Admin.css";
 
 const loadingStyle = {
   width: "100px",
@@ -73,7 +73,7 @@ function Admin({ studentRecords, getRecs }) {
           </Nav>
         </Navbar>
         <div>
-          <Container>
+          <Container class="X">
             <Row>
               <div style={loadingStyle} className="Col m-auto">
                 Percentage of Students Registered
@@ -118,7 +118,7 @@ function Admin({ studentRecords, getRecs }) {
 
         <div>
           <Tabs defaultActiveKey="modifyDates" id="adminTabs">
-            <Tab eventKey="modifyDates" title="Convocation Dates">
+            <Tab eventKey="modifyDates" title="Dates">
               <div id="currentDatesBlock">
                 These are the Set dates for the convocation:
                 <ul>

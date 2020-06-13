@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./studentInfo.css";
 import axios from "axios";
+// front-end to server connection is done by axios.
+// server to database connection is done by express. 
 import {
   Container,
   Button,
@@ -32,7 +34,8 @@ let obj = {
   state:"",
   zip:"",
   familyCount:"",
-  chosenDate:""
+  chosenDate:"",
+
 }
 
 
@@ -107,10 +110,15 @@ function resetDate(){
 }
 
 
+function handleChange(familyCount){
+  console.log(familyCount);
+  console.log("hello");
 
+}
 
 function StudentInfo(){  
   return (
+   
     <div className="I">
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="#home">Manipal University Jaipur</Navbar.Brand>
@@ -364,15 +372,16 @@ function StudentInfo(){
                         <h4>please select the number of people attending the event</h4>
                       <form>
                          <label htmlFor="quantity">People (between 1 and 4):</label>
-                         <input type="number" id="quantity" name="quantity" min="1" max="4"/>
-                         <input 
+                         <input type="number" id="quantity"
+                        name="quantity" min="1" max="4"
                         onChange={(e) => {
-                          obj.familyCount= e.target.value;
-                        }}
-                        onClick={() => {
-                          submitAll();
-                        }}
-                        type="submit"/>
+                          obj.familyCount= e.target.value; }}
+                          />
+
+                         <input  id="quantity"
+                         // onClick={() =>{handleChange(obj.familyCount)}}
+                         onClick={handleChange(obj.familyCount)}
+                         type="submit"/>
                      </form>
                         
                       </Form.Group>
@@ -382,7 +391,7 @@ function StudentInfo(){
                       Please select your date for attending the Convocation
                     </h4>
                     <Form.Row>
-                      <Form.Group controlId="formBasicCheckbox10">
+                    <span class="high"><Form.Group controlId="formBasicCheckbox10">
                       <Form.Check
                         type="radio"
                         label="10th July"
@@ -392,25 +401,24 @@ function StudentInfo(){
                         disabled={false}
                         onClick={() => {obj.chosenDate ="10"}}
                       />
-                      </Form.Group>
+                      </Form.Group></span>
                     </Form.Row>
 
                     <Form.Row>
-                      <Form.Group controlId="formBasicCheckbox12">
+             <span class="high"><Form.Group controlId="formBasicCheckbox12">
                       <Form.Check
                         type="radio"
-                        label="12th July"
+                      label="12th July"
                         name="formHorizontalRadios"
                         id="formHorizontalDateRadio12"
                         value="0"
                         onClick={() => {obj.chosenDate ="12"}}
-                        
                       />
-                      </Form.Group>
-                    </Form.Row>
-
+                      </Form.Group></span>
+                    </Form.Row>   
+                                
                     <Form.Row>
-                      <Form.Group controlId="formBasicCheckbox14">
+                    <span class="high"><Form.Group controlId="formBasicCheckbox14">
                       <Form.Check
                         type="radio"
                         label="14th July"
@@ -419,7 +427,7 @@ function StudentInfo(){
                         value="0"                
                         onClick={() => {obj.chosenDate ="14"}}
                       />
-                      </Form.Group>
+                      </Form.Group></span>
                     </Form.Row>
 
                     <Button onClick={() =>{setDate(obj.chosenDate)}}>Set Date</Button>
@@ -427,7 +435,7 @@ function StudentInfo(){
                    
                   </Form>
                   
-                  <Link to="/Join" className="btn btn-primary">Choose your date</Link>
+                 {/*   <Link to="/Join" className="btn btn-primary">Choose your date</Link>  */}
                 </div>
                 <div id="notAttending" style={{ display: "none" }}>
                   Please Click the following link to recieve degree by post
