@@ -50,6 +50,14 @@ function modifyDates(){
 // let records = [];
 
 function Admin({ studentRecords, getRecs }) {
+  console.log(studentRecords)
+  let a = studentRecords.length
+  console.log(a)
+  let b = a/10;
+  let c = b *100
+  console.log(c + " npm percent")
+
+
   return (
     <div class="ba">
       <div>
@@ -69,9 +77,10 @@ function Admin({ studentRecords, getRecs }) {
             <Row>
               <div style={loadingStyle} className="Col m-auto">
                 Percentage of Students Registered
+                
                 <Circle
-                  percent="10"
-                  strokeWidth="4"
+                  percent={c}
+                  strokeWidth="9"
                   strokeColor="red"
                   gapDegree="90"
                   gapPosition="bottom"
@@ -80,8 +89,8 @@ function Admin({ studentRecords, getRecs }) {
               <div style={loadingStyle} className="Col m-auto">
                 Percentage of Students Attending
                 <Circle
-                  percent="10"
-                  strokeWidth="4"
+                  percent="65"
+                  strokeWidth="9"
                   strokeColor="green"
                   gapDegree="90"
                   gapPosition="bottom"
@@ -90,8 +99,8 @@ function Admin({ studentRecords, getRecs }) {
               <div style={loadingStyle} className="Col m-auto">
                 Percentage of Student not yet paid
                 <Circle
-                  percent="10"
-                  strokeWidth="4"
+                  percent="30"
+                  strokeWidth="9"
                   strokeColor="blue"
                   gapDegree="90"
                   gapPosition="bottom"
@@ -109,9 +118,9 @@ function Admin({ studentRecords, getRecs }) {
 
         <div>
           <Tabs defaultActiveKey="modifyDates" id="adminTabs">
-            <Tab eventKey="modifyDates" title="Modify Dates">
+            <Tab eventKey="modifyDates" title="Convocation Dates">
               <div id="currentDatesBlock">
-                These are the current dates for the convocation:
+                These are the Set dates for the convocation:
                 <ul>
                   <li>Convocation Day 1 : 10th July</li>
                   <li>Convocation Day 2 : 12th July</li>
@@ -142,14 +151,16 @@ function Admin({ studentRecords, getRecs }) {
 
               {/* <Button onClick={() => {modifyDates()}}>Change Dates</Button> */}
             </Tab>
-            <Tab eventKey="view" title="View">
-              <Button
-                onClick={() => {
-                  getRecs();
-                }}
-              >
-                Click here to view all student records
-              </Button>
+            <Tab eventKey="view" title="View Registered Information">
+              <Container>
+                  <br />
+                <Row className="justify-content-m-center">
+                <h4>Click on the names to view complete information about each student</h4>
+
+                </Row>
+              </Container>
+              {/* <br /> */}
+              <hr />
               {studentRecords.map((x, i) => (
                 //  <div>{x.firstName}</div>
                 <div>
@@ -179,7 +190,10 @@ function Admin({ studentRecords, getRecs }) {
                           Address : {x.address} <br />
                           City : {x.city} <br />
                           Zip Code : {x.zip} <br />
-                          Number of Family Members Attending : {x.familyCount} <br />
+                          Number of Family Members Attending : {
+                            x.familyCount
+                          }{" "}
+                          <br />
                           Attending on Date : {x.chosenDate} <br />
                         </Card.Body>
                       </Accordion.Collapse>

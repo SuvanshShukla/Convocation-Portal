@@ -17,19 +17,25 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.state ={
-      records: [],
-    } ;
+    this.state.records = [];
+    this.state.lengy = "";
   }
 
   getAll(){
     axios.get("http://localhost:8080/steal").then(res =>{
+      let a = res.data
       this.setState({
-        records: res.data
+        records: a
       })
       console.log(res.data);    
-      console.log(this.state.records);
+      this.setState({
+        lengy: a.length
+      })
     })
+  }
+
+  componentDidMount(){
+    this.getAll();
   }
 
 
@@ -44,7 +50,7 @@ class App extends React.Component {
         <Route path="/Welcome" exact render={props =>(<Welcome></Welcome>)} />
         <Route path="/Join" exact render={props => (<Join></Join>)} />
         <Route path="/Degree" exact render={props => (<Degree></Degree>)} />
-        <Route path="/Admin" exact render={(props) => (<Admin {...props} studentRecords={this.state.records} getRecs={this.getAll.bind(this)}/>)} />
+        <Route path="/Admin" exact render={(props) => (<Admin {...props} studentRecords={this.state.records} getRecs={this.getAll.bind(this)} len={this.state.lengy}/>)} />
         <Route path="/Pay" exact render={props=>(<Pay></Pay>)} />
       
       </Router>
