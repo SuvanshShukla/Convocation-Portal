@@ -63,13 +63,33 @@ const convocationDatesSchema = new Schema({
 
 const convocationDates = mongoose.model("convocationDates", convocationDatesSchema);
 
+const userCredSchema = new Schema({
+    email:String,
+    password:String
+})
+
+const userCred = mongoose.model("userCred", userCredSchema);
+
 
 server.post("/login", (req,res) => {
     console.log(req.body);
 })
 
 server.post("/register", (req,res) => {
-    console.log(req.body);
+    userCred.findOne({email: req.body.email}, async (err, doc) => {
+        if(err) throw err;
+        if(doc) res.send("User already exists");
+        if(!doc) {
+            const hashedPassword = bcrypt.hash(req.body.password, 10);
+
+            const newUser = new userCred({
+                email: req.body.email,
+                password: hashedPassword
+            });
+            await newUser.save();
+            console.log(newUser);
+        }
+    })
 })
 
 //used to POST data to DB
