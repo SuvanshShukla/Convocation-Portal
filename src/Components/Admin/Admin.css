@@ -1,9 +1,12 @@
 .ba{
-  background:url("https://2.bp.blogspot.com/-Y-M9VkJliMQ/WrKkPIRmAsI/AAAAAAAAGg4/eOUrZ8bs3qEuzcfoUwNxLItr6I-57ikEwCLcBGAs/s1600/Jamboard_screensaver_ticker_800.gif");
+  background:url("https://i.pinimg.com/originals/51/95/eb/5195ebb8c5f9772deda82aa2937134d3.jpg");
   background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height:100vh;
     width: 100%;
-    color:rgb(223, 41, 71);
+    color:orange;
+}
+.ht{
+  background-color:#FFFF00;
 }
