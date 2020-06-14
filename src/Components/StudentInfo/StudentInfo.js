@@ -126,8 +126,10 @@ function StudentInfo(){
           <Nav.Link href="#home">
             <Link to="/studentInfo">Dashboard</Link>
           </Nav.Link>
-          <Nav.Link href="/Welcome">Welcome</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link href="/welcome">Welcome</Nav.Link>
+          <Nav.Link href="https://jaipur.manipal.edu/muj/Announcements.html" target="_blank">Announcements</Nav.Link>
+         <span class="highlighty"><Nav.Link href="https://jaipur.manipal.edu/muj/admission.html" target="_blank">Admissions</Nav.Link></span>
+          
         </Nav>
       </Navbar>
       <div>

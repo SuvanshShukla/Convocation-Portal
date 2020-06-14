@@ -68,8 +68,8 @@ function Admin({ studentRecords, getRecs }) {
           <Nav className="mr-auto">
             <Nav.Link href="/Welcome">Welcome</Nav.Link>
             <Nav.Link href="/StudentInfo">Dashboard</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="/login">login</Nav.Link>
+            <Nav.Link href="https://jaipur.manipal.edu/muj/blog.html" target="_blank">MUJ Blog</Nav.Link>
           </Nav>
         </Navbar>
         <div>
