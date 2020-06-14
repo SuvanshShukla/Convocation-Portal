@@ -7,14 +7,11 @@ import "./styles.css";
 import Signup from "../Signup/Signup";
 
 var email,
-password = "";
+  password = "";
 
-function showCredentials(){
-  console.log(email);
-  console.log(password);
-}
+function showCredentials() {}
 
-function Login() {
+function Login({ /* logPass, logEmail */ getLogEmail, getLogPassword, loginFunction }) {
   return (
     <div
       style={{
@@ -29,16 +26,31 @@ function Login() {
       }}
     >
       <Menu>
-        <a id="manipalWebsite" className="menu-item" href="https://jaipur.manipal.edu/" target="_blank">
+        <a
+          id="manipalWebsite"
+          className="menu-item"
+          href="https://jaipur.manipal.edu/"
+          target="_blank"
+        >
           Main Website (MUJ)
         </a>
-        <a id="about" className="menu-item" href="https://jaipur.manipal.edu/muj/about-us.html" target="_blank">
+        <a
+          id="about"
+          className="menu-item"
+          href="https://jaipur.manipal.edu/muj/about-us.html"
+          target="_blank"
+        >
           About
         </a>
-        <a id="contact" className="menu-item" href="https://jaipur.manipal.edu/muj/contact-us.html" target="_blank">
+        <a
+          id="contact"
+          className="menu-item"
+          href="https://jaipur.manipal.edu/muj/contact-us.html"
+          target="_blank"
+        >
           Contact
         </a>
-        <a id="Signup" className="menu-item" href="/Signup"> 
+        <a id="Signup" className="menu-item" href="/Signup">
           Sign up/Register
         </a>
       </Menu>
@@ -47,7 +59,7 @@ function Login() {
           <Col>
             <div className="text-center">
               <div class="m">
-              <h1>Manipal University Jaipur</h1>
+                <h1>Manipal University Jaipur</h1>
               </div>
             </div>
           </Col>
@@ -63,7 +75,13 @@ function Login() {
                 <Form>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" onChange={(e) => {email = e.target.value}} />
+                    <Form.Control
+                      type="email"
+                      placeholder="Enter email"
+                      onChange={(e) => {
+                        getLogEmail(e)
+                      }}
+                    />
                     <Form.Text className="text-muted">
                       We'll never share your email with anyone else.
                     </Form.Text>
@@ -71,9 +89,15 @@ function Login() {
 
                   <Form.Group controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="" onChange={(e) =>{password = e.target.value}}/>
+                    <Form.Control
+                      type="password"
+                      placeholder=""
+                      onChange={(e) => {
+                        getLogPassword(e);
+                      }}
+                    />
                   </Form.Group>
-                  
+
                   <Route path="/Signup" exact strict component={<Signup />} />
                   <ul className="t">
                     Don't have an Account{" "}
@@ -82,7 +106,15 @@ function Login() {
                     </Link>
                   </ul>
 
-                  <Button variant="primary" type="button" onClick={() => {showCredentials()}}>
+                  <Button
+                    variant="primary"
+                    type="button"
+                    onClick={() => {
+                      loginFunction()
+                      /* console.log(logEmail);
+                      console.log(logPass); */
+                    }}
+                  >
                     Sign in
                   </Button>
                 </Form>

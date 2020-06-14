@@ -2,12 +2,31 @@ const express = require("express"); //used in creating a server
 const cors = require("cors")    //used in front-to-back connection necessary for functionality
 const bodyParser = require("body-parser");  //used to parse data being passed from the body of the frontend
 const mongoose = require('mongoose');   //used to code the specifics of the DB 
+const passport = require('passport');
+const passportLocal = require('passport-local').Strategy;
+const cookieParser = require('cookie-parser');
+const bcrypt = require('bcryptjs');
+const session = require('express-session');
+
 
 const server = express();   //establishing the server
 
-server.use(cors())
+
+//MIddlewares
 server.use(bodyParser.json());
-server.use(bodyParser.urlencoded({extended: false}));
+server.use(bodyParser.urlencoded({extended: true}));
+server.use(cors({
+    origin: "http://localhost:3000", //location of the react app that we are connecting to 
+    credentials: true
+}))
+
+server.use(session({
+    secret: "secretcode",
+    resave: true,
+    saveUninitialized: true
+}));
+
+server.use(cookieParser("secretcode"))
 
 
 mongoose.connect('mongodb://localhost:27017/convocationdb', {useNewUrlParser: true}); 
@@ -43,6 +62,15 @@ const convocationDatesSchema = new Schema({
 })
 
 const convocationDates = mongoose.model("convocationDates", convocationDatesSchema);
+
+
+server.post("/login", (req,res) => {
+    console.log(req.body);
+})
+
+server.post("/register", (req,res) => {
+    console.log(req.body);
+})
 
 //used to POST data to DB
 server.post("/sendData", function(req,res){
@@ -141,7 +169,7 @@ server.get("/steal", function(req,res){
     res.send("hello");
 }) */
 
-
+//start server
 server.listen(8080,function(){
     console.log("server started")
 })

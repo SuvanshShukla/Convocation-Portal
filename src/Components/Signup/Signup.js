@@ -8,7 +8,7 @@ var email,
   password,
   confirm_password = "";
 
-function checkInput() {
+/* unction checkInput() {
   console.log(email);
   console.log(password);
 }
@@ -20,9 +20,9 @@ function passCheck(password, confirm_password){
     console.log("passwords don't match");
     
   }
-}
+} */
 
-function Signup() {
+function Signup({regfunction,/*  regEmail, regPass, */ getRegEmail, getRegPass}) {
   return (
     <div>
       <Menu>
@@ -54,7 +54,7 @@ function Signup() {
                   type="email"
                   placeholder="Enter email"
                   onChange={(e) => {
-                    email = e.target.value;
+                    getRegEmail(e);
                   }}
                 />
               </Form.Group>
@@ -69,13 +69,13 @@ function Signup() {
                   type="password"
                   placeholder="Enter your password"
                   onChange={(e) => {
-                    password = e.target.value;
+                    getRegPass(e);
                   }}
                 />
               </Form.Group>
             </Form.Row>
 
-            <Form.Row>
+            {/* <Form.Row>
               <Form.Group as={Col} controlId="formGridConfirmPassword">
                 <div class="center">
                 <Form.Label>Please confirm your password</Form.Label>
@@ -88,15 +88,14 @@ function Signup() {
                   }}
                 />
               </Form.Group>
-            </Form.Row>
+            </Form.Row> */}
 
             <div className="createAccount">
               <Button
                 type="button"
                 variant="success"
                 onClick={() => {
-                  checkInput();
-                  passCheck(password,confirm_password);
+                  regfunction();                
                 }}
               >
                 Sign up

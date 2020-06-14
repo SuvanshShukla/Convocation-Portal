@@ -79,7 +79,7 @@ function Admin({ studentRecords, getRecs }) {
                 Percentage of Students Registered
                 
                 <Circle
-                  percent={c}
+                  percent="80"
                   strokeWidth="9"
                   strokeColor="red"
                   gapDegree="90"
