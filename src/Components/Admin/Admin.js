@@ -67,8 +67,8 @@ function Admin({ studentRecords, getRecs }) {
           </Navbar.Brand>
           <Nav className="mr-auto">
             <Nav.Link href="/Welcome">Welcome</Nav.Link>
-            <Nav.Link href="/StudentInfo">Dashboard</Nav.Link>
-            <Nav.Link href="/login">login</Nav.Link>
+            <Nav.Link href="/Admin">Dashboard</Nav.Link>
+            <Nav.Link href="/login">Logout</Nav.Link>
             <Nav.Link href="https://jaipur.manipal.edu/muj/Announcements.html" target="_blank">Announcements</Nav.Link>
           </Nav>
         </Navbar>
@@ -181,7 +181,7 @@ function Admin({ studentRecords, getRecs }) {
                           Registration Number : {x.regno} <br />
                           Email ID : {x.email} <br />
                           Student Phone Number : {x.studentNo} <br />
-                          Parent Phone Number : {x.patentNo} <br />
+                          Parent Phone Number : {x.parentNo} <br />
                           Student Blood Type : {x.bloodgrp} <br />
                           Program : {x.program} <br />
                           Department : {x.dept} <br />
