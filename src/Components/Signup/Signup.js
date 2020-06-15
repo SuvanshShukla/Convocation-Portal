@@ -51,7 +51,7 @@ function Signup({regfunction,/*  regEmail, regPass, */ getRegEmail, getRegPass})
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
               <div class="center">
-                <Form.Label>Email</Form.Label>
+                <Form.Label>Email/Username</Form.Label>
                 </div>
                 <Form.Control
                   type="email"

@@ -74,7 +74,7 @@ function Login({ /* logPass, logEmail */ getLogEmail, getLogPassword, loginFunct
                 <p className="highlight">Please Enter Details to Sign in</p>
                 <Form>
                   <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Email address/Username</Form.Label>
                     <Form.Control
                       type="email"
                       placeholder="Enter email"
