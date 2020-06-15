@@ -9,8 +9,10 @@ import Degree from "./Components/Degree/Degree";
 import Signup from "./Components/Signup/Signup";
 import Admin from "./Components/Admin/Admin";
 import Pay from "./Components/Pay/Pay";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, useHistory, Redirect } from "react-router-dom";
 import axios from "axios";
+import { createBrowserHistory } from "history";
+const customHistory = createBrowserHistory();
 
 // import Signup from "./Components/Signup/Signup";
 class App extends React.Component {
@@ -75,7 +77,14 @@ class App extends React.Component {
       },
       withCredentials: true,
       url: "http://localhost:8080/register",
-    }).then((res) => console.log(res));
+    }).then((res) => {
+      if(res.data === "user created"){
+        console.log("user created");
+        alert("account created")
+        customHistory.replace('/login');
+        window.location.reload();
+      }
+    });
   }
 
   login() {
@@ -87,13 +96,26 @@ class App extends React.Component {
       },
       withCredentials: true,
       url: "http://localhost:8080/login",
-    }).then((res) => console.log(res));
+    }).then((res) => {
+      console.log(res);
+      // this.render(<Redirect to="/StudentInfo"></Redirect>)
+      // window.open("/StudentInfo")
+      // history.push("/StudentInfo")
+      if(res.data === "Admin"){
+        customHistory.replace('/Admin');
+        window.location.reload();
+
+      }
+      else {
+        customHistory.replace('/Welcome');
+        window.location.reload()}
+    });
   }
 
   render() {
     return (
       // <h1>This is the first trial of the Minor Project!!</h1>
-      <Router>
+      <Router history={customHistory}>
         <Route path="/" exact render={(props) => <UserHome></UserHome>} />
         <Route
           path="/login"

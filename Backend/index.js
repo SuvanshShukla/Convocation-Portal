@@ -7,7 +7,7 @@ const passportLocal = require('passport-local').Strategy;
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const session = require('express-session');
-
+const userCred = require('./user');
 
 const server = express();   //establishing the server
 
@@ -28,8 +28,12 @@ server.use(session({
 
 server.use(cookieParser("secretcode"))
 
+server.use(passport.initialize());
+server.use(passport.session());
+require('./passportConfiguration')(passport);
 
-mongoose.connect('mongodb://localhost:27017/convocationdb', {useNewUrlParser: true}); 
+
+mongoose.connect('mongodb://localhost:27017/convocationdb', {useNewUrlParser: true, useUnifiedTopology: true}); 
 //useNewUrlParser is used to fix deprecation warnings
 
 const Schema  = mongoose.Schema; //making a new instance of schema 
@@ -53,6 +57,36 @@ const studentInfoSchema = new Schema({  //adding details of what the shcma conta
   chosenDate:String
 })
 
+/* function (passport){
+    passport.use(
+        new localStrategy((email ,password, done) => {
+            userCred.findOne({email:email}, (err, userCred) => {
+                if(err) throw err;
+                if(!user) return done(null, false);
+                bcrypt.compare(password, userCred.password, (err, result) => {
+                    if(err) throw err;
+                    if(result === true) {
+                        return done(null, userCred)
+                    } else {
+                        return done(null, false)
+                    }
+                })
+            })
+        })
+    );
+
+    passport.serializeUser ((userCred, cb) => {
+        cb(null, userCred.id);
+    })
+    passport.deserializeUser((id, cb) =>{
+        userCred.findOne({_id: id}, (err, userCred) => {
+            cb(err, userCred);
+        })
+    })
+} */
+
+
+
 const studentInfo = mongoose.model("studentInfo", studentInfoSchema);   //creating a new instance of mongoose model
 
 const convocationDatesSchema = new Schema({
@@ -63,16 +97,32 @@ const convocationDatesSchema = new Schema({
 
 const convocationDates = mongoose.model("convocationDates", convocationDatesSchema);
 
-const userCredSchema = new Schema({
-    email:String,
-    password:String
-})
-
-const userCred = mongoose.model("userCred", userCredSchema);
 
 
-server.post("/login", (req,res) => {
-    console.log(req.body);
+
+server.post("/login", (req, res) => {
+    userCred.findOne({email: req.body.email}, (err, docs) =>{
+        if(err) throw err;
+        if(docs) {
+            if(docs.email === "Admin"){
+            res.send("Admin");
+            }
+            else {
+            res.send("match found");
+            }
+        }
+    })
+    /* passport.authenticate("local", (err, userCred, info) =>{
+        if(err) throw err;
+        if(!userCred) {res.send("No user exists"); console.log(res.data);}        
+        else {
+            req.logIn(userCred, err => {
+                if(err) throw err ;
+                res.send("successfully authenticated!!");
+                console.log(req.userCred);
+            })
+        }
+    })(req, res, next);  */
 })
 
 server.post("/register", (req,res) => {
@@ -87,7 +137,8 @@ server.post("/register", (req,res) => {
                 password: hashedPassword
             });
             await newUser.save();
-            console.log(newUser);
+            console.log(newUser);   
+            res.send("user created")         // res.render("http:localhost:3000/login")
         }
     })
 })

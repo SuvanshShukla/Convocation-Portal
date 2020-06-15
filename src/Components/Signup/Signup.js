@@ -22,6 +22,9 @@ function passCheck(password, confirm_password){
   }
 } */
 
+
+
+
 function Signup({regfunction,/*  regEmail, regPass, */ getRegEmail, getRegPass}) {
   return (
     <div>
