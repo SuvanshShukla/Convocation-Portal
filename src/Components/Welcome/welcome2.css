@@ -69,4 +69,25 @@
     background-color:yellow;
     
 }
+.highlight2{
+   /* background-color: rgb(31, 31, 199); */
+    background-color: #3B5998;
+    color:white;
+}
+.heyt{
+   background-color:#55ACEE;
+    color:white;
+}
+.heyyou{
+    background: #bb0000;
+    color: white;
+}
+.heyinsta{
+    background:#125688;
+    color: white;
+}
+.heylink{
+    background: #dd4b39;
+    color: white;
+}
 

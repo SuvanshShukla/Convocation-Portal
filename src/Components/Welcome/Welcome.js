@@ -20,9 +20,16 @@ function Welcome() {
             <Nav.Link href="#home">
               <Link to="/studentInfo">Dashboard</Link>
             </Nav.Link>
-            <Nav.Link href="/Welcome">Welcome</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="https://jaipur.manipal.edu/muj/contact-us.html" target="_blank">Contact</Nav.Link>
+            <Nav.Link href="https://jaipur.manipal.edu/muj/about-us.html" target="_blank">About</Nav.Link>
+            <span class="highlighty"><Nav.Link href="https://jaipur.manipal.edu/muj/admission.html" target="_blank">Admissions</Nav.Link></span>
           </Nav>
+          <span class="highlight2"><Nav.Link href="https://www.facebook.com/manipal.university/" target="_blank"><a href="https://www.facebook.com/manipal.university/" target="_blank" class="fa fa-facebook"></a></Nav.Link></span>
+          <span class="heyt"><Nav.Link href="https://twitter.com/Jaipur_Manipal?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor/" target="_blank"><a href="https://twitter.com/Jaipur_Manipal?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor/" target="_blank" class="fa fa-twitter"></a></Nav.Link></span>
+          <span class="heyyou"><Nav.Link href="https://www.youtube.com/channel/UCFbeX4UJyd4fHTCnCVGob_Q" target="_blank"><a href="https://www.youtube.com/channel/UCFbeX4UJyd4fHTCnCVGob_Q" target="_blank" class="fa fa-youtube"></a></Nav.Link></span>
+          <span class="heyinsta"><Nav.Link href="https://www.instagram.com/jaipurmanipal/?hl=en" target="_blank"><a href="https://www.instagram.com/jaipurmanipal/?hl=en" target="_blank" class="fa fa-instagram"></a></Nav.Link></span>
+          <span class="heylink"><Nav.Link href="https://www.linkedin.com/school/manipal-university-jaipur/" target="_blank"><a href="https://www.linkedin.com/school/manipal-university-jaipur/" target="_blank" class="fa fa-linkedin"></a></Nav.Link></span>
+         
         </Navbar>
       </div>
       <div class="con">

@@ -126,8 +126,11 @@ function StudentInfo(){
           <Nav.Link href="#home">
             <Link to="/studentInfo">Dashboard</Link>
           </Nav.Link>
-          <Nav.Link href="/Welcome">Welcome</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link href="/welcome">Welcome</Nav.Link>
+          <Nav.Link href="https://jaipur.manipal.edu/muj/blog.html" target="_blank">MUJ Blog</Nav.Link>
+          <Nav.Link href="https://jaipur.manipal.edu/muj/Announcements.html" target="_blank">Announcements</Nav.Link>
+         <span class="highlighty"><Nav.Link href="https://jaipur.manipal.edu/muj/admission.html" target="_blank">Admissions</Nav.Link></span>
+          
         </Nav>
       </Navbar>
       <div>
@@ -434,7 +437,7 @@ function StudentInfo(){
                     <Button onClick={() => { obj.chosenDate = ""; resetDate();}}>Reset Date</Button>
                    
                   </Form>
-                  
+                  <Button><Link to="/Pay">Submit</Link></Button>
                  {/*   <Link to="/Join" className="btn btn-primary">Choose your date</Link>  */}
                 </div>
                 <div id="notAttending" style={{ display: "none" }}>

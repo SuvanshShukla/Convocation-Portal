@@ -68,8 +68,8 @@ function Admin({ studentRecords, getRecs }) {
           <Nav className="mr-auto">
             <Nav.Link href="/Welcome">Welcome</Nav.Link>
             <Nav.Link href="/StudentInfo">Dashboard</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="/login">login</Nav.Link>
+            <Nav.Link href="https://jaipur.manipal.edu/muj/Announcements.html" target="_blank">Announcements</Nav.Link>
           </Nav>
         </Navbar>
         <div>
@@ -120,11 +120,11 @@ function Admin({ studentRecords, getRecs }) {
           <Tabs defaultActiveKey="modifyDates" id="adminTabs">
             <Tab eventKey="modifyDates" title="Dates">
               <div id="currentDatesBlock">
-                These are the Set dates for the convocation:
+              <span className="ht">These are the Set dates for the convocation:</span>
                 <ul>
-                  <li>Convocation Day 1 : 10th July</li>
-                  <li>Convocation Day 2 : 12th July</li>
-                  <li>Convocation Day 3 : 14th July</li>
+                <span className="ht"><li>Convocation Day 1 : 10th July</li></span>
+                <span className="ht"><li>Convocation Day 2 : 12th July</li></span>  
+                <span className="ht"><li>Convocation Day 3 : 14th July</li></span>
                 </ul>
               </div>
               {/* {console.log(recs)} */}
@@ -155,7 +155,7 @@ function Admin({ studentRecords, getRecs }) {
               <Container>
                   <br />
                 <Row className="justify-content-m-center">
-                <h4>Click on the names to view complete information about each student</h4>
+                <span className="ht"><h4>Click on the names to view complete information about each student</h4></span>
 
                 </Row>
               </Container>
