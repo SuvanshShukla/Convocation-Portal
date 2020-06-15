@@ -190,11 +190,11 @@ function Admin({ studentRecords, getRecs }) {
                           Address : {x.address} <br />
                           City : {x.city} <br />
                           Zip Code : {x.zip} <br />
-                          Number of Family Members Attending : {
+                          {/* Number of Family Members Attending : {
                             x.familyCount
-                          }{" "}
+                          }{" "} */}
                           <br />
-                          Attending on Date : {x.chosenDate} <br />
+                          {/* Attending on Date : {x.chosenDate} <br /> */}
                         </Card.Body>
                       </Accordion.Collapse>
                     </Card>
