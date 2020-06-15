@@ -437,7 +437,7 @@ function StudentInfo(){
                     <Button onClick={() => { obj.chosenDate = ""; resetDate();}}>Reset Date</Button>
                    
                   </Form>
-                  
+                  <Button><Link to="/Pay">Submit</Link></Button>
                  {/*   <Link to="/Join" className="btn btn-primary">Choose your date</Link>  */}
                 </div>
                 <div id="notAttending" style={{ display: "none" }}>
